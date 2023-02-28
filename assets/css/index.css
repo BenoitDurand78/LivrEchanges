@@ -1,0 +1,106 @@
+blockquote {
+    border: 1px solid black;
+    text-align: center;
+    margin: 1em auto;
+    padding: 0.3em;
+    width: 60%;
+    /* height: fit-content; */
+    color: #142243;
+}
+
+#quotation {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#author {
+    font-style: italic;
+    margin-left: 20%;
+}
+
+.carousel {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.495);
+}
+
+.homeTexts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.explanations, .whyDonate {
+    border: 1px solid black;
+    width: 400px;
+    margin: 2%;
+    background-color: #f2dcb18c;
+    border: 3px solid #14224369;
+}
+
+.bookSearchForm {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+    width: 30%;
+}
+
+.search {
+    text-align: center;
+}
+
+.btn{
+    background-color: #142243;
+    color: white;
+    font-size: 1em;
+    border: 3px solid #142243;
+    margin-top: 1em;
+}
+
+.btn:hover {
+    background-color: #f2dcb154;
+    color: #142243;
+    font-size: 1em;
+    border: 3px solid #142243;
+}
+
+#bookSearch {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#searchByCategory {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 2em auto 0.5em auto;
+}
+
+
+#bookResearchHome {
+    width: 80%;
+    margin: auto;
+}
+
+.quickSearch {
+    text-align: center;
+    margin: auto;
+}
+
+.bookCategories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+
+.categoriesBlocks {
+    border: 1px solid black;
+}

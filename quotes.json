@@ -1,0 +1,70 @@
+{
+    "quotes": [
+        {
+            "id": 1,
+            "quote": "'L'art de lire, c'est l'art de penser avec un peu d'aide.'",
+            "author": "Emile Faguet",
+            "title": "L'art de lire"
+        },
+        {
+            "id": 2,
+            "quote": "'N'oublie pas ça : tous les livres viennent des rêves, et tous les rêves viennent des livres.'",
+            "author": "Maxence Fermine",
+            "title": "L'apiculteur"
+        },
+        {
+            "id": 3,
+            "quote": "'Il demanda s'il pouvait m'emprunter, comme on emprunte un livre. Mais au bout du compte, comme tant de livres utiles, on ne m'a jamais rendu.'",
+            "author": "Robert Harris",
+            "title": "Imperium"
+        },
+        {
+            "id": 4,
+            "quote": "'Comme la nature, les bibliothèques ont horreur du vide, et le problème de l'espace est inhérent à la nature même de toute collection de livres.'",
+            "author": "Alberto Manguel",
+            "title": "La bibliotheque, la nuit"
+        },
+        {
+            "id": 5,
+            "quote": "'Le temps est un fleuve... et les livres sont ses vaisseaux. Beaucoup de livres descendent son cours, beaucoup se perdent dans ses sables. Seuls quelques-uns résistent aux épreuves du temps et parviennent jusqu'aux âges suivants.'",
+            "author": "Dan Brown",
+            "title": "Le symbole perdu"
+        },
+        {
+            "id": 6,
+            "quote": "'Raoul ne m'avait pas trompé en disant que les livres, eux, étaient des amis qui ne trahissaient jamais.'",
+            "author": "Bernard Werber",
+            "title": "Les thanatonautes"
+        },
+        {
+            "id": 7,
+            "quote": "'Est-ce qu'il y a de la magie dedans ? Il m'a dit que les livres étaient de bons outils pour se battre contre la nuit.'",
+            "author": "Mathias Malzieu",
+            "title": "Maintenant qu'il fait tout le temps nuit sur toi "
+        },
+        {
+            "id": 8,
+            "quote": "'Rien de plus triste, de plus solitaire que des étagères sans livres : c'est tout bonnement absurde.'",
+            "author": "Ruta Sepetys",
+            "title": "Big easy"
+        },
+        {
+            "id": 9,
+            "quote": "'Parce qu'écrire des livres, ce n'est pas rien : tout le monde sait écrire, mais tout le monde n'est pas écrivain.'",
+            "author": "Joël Dicker",
+            "title": "La vérité sur l'affaire Harry Quebert"
+        },
+        {
+            "id": 10,
+            "quote": "'Entre la vie et les livres, mon fils, choisis les livres.'",
+            "author": "José Eduardo Agualusa",
+            "title": "Le marchand de passés"
+        },
+        {
+            "id": 11,
+            "quote": "'Les livres que le monde juge immoraux sont ceux qui lui tendent le miroir de son ignominie.'",
+            "author": "Oscar Wilde",
+            "title": "Le portrait de Dorian Gray"
+        }
+    ]
+}

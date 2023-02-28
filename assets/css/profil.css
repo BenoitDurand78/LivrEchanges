@@ -1,0 +1,51 @@
+h2 {
+    text-align: center;
+    margin: 2em auto;
+}
+
+
+i {
+    color: #142243;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 80%;
+}
+
+#profil {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 60%;
+    margin: auto;
+}
+
+.infoProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descriptionText {
+    width: 50%;
+    text-align: center;
+    margin: 1em auto;
+    line-height: 1.5em;
+}
+
+#buttonsProfile {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3em;
+}

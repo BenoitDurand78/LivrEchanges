@@ -1,0 +1,27 @@
+.contact {
+    width: 60%;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin: 2em auto;
+}
+
+textarea {
+    width: 1400px;
+}
+
+.btn {
+    background-color: #142243;
+    color: white;
+    font-size: 1.2em;
+    border: 3px solid #142243;
+}
+
+.btn:hover {
+    background-color: #f2dcb154;
+    color: #142243;
+    font-size: 1.2em;
+    border: 3px solid #142243;
+}
