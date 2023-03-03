@@ -145,7 +145,7 @@ class UsersController
                             "text" => "Vous êtes désormais connecté."
                         ];
 
-                        $_SESSION["email"] = $_POST["email"];
+                        $_SESSION["firstname"] = $user->firstname;
 
                         header("Location: /index.php");
                     }

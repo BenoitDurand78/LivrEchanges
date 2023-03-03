@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define("TITLE", "Accueil");
 define("CSS", "index");
 define("SCRIPT", "script");

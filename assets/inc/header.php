@@ -24,6 +24,15 @@
 
 <header>
 
+
+<?php
+
+if(isset($_SESSION["firstname"])) { ?>
+  <p id="welcome"> Bienvenue <?= $_SESSION["firstname"] ?> ! <a href="/deconnexion.php">Déconnexion</a></p> <?php
+}
+
+?>
+
   <img src="../assets/logo4_1.png" alt="logo Livr'Échanges" id="logo">
 
   <nav class="navbar navbar-expand-lg">
@@ -71,6 +80,6 @@
     </div>
   </nav>
 
-  <hr />
+  <hr/>
 
 </header>

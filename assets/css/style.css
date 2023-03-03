@@ -40,6 +40,12 @@ header {
     flex-direction: column;
 }
 
+#welcome {
+    font-size: 1.1em;
+    text-align: end;
+    margin-right: 20px;
+}
+
 footer {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 define("TITLE", "Contact");
 define("CSS", "contact");
 

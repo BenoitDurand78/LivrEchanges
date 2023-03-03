@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 define("TITLE", "Ajout d'un livre");
 define("CSS", "ajout");
 

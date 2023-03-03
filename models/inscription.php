@@ -46,5 +46,4 @@ class User {
 
         return $user; 
     }
-
 }

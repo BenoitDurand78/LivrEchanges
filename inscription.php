@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 define("TITLE", "Inscription à Livr'Échanges");
 define("CSS", "inscription");
 
