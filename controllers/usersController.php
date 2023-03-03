@@ -2,7 +2,7 @@
 
 require_once(__DIR__ . "/../models/inscription.php");
 
-class InscriptionController
+class UsersController
 {
 
     public function inscriptionValidate(): array
@@ -88,9 +88,71 @@ class InscriptionController
                     "success" => true,
                     "text" => "Votre compte a bien été créé"
                 ];
-                User::create($_POST["civility"], $_POST["surname"], $_POST["firstname"], $_POST["email"], $_POST["password"], $_POST["birthDate"], $_POST["streetName"], $_POST["city"], $_POST["postalCode"]);
+
+                $surname = htmlspecialchars($_POST["surname"]);
+                $firstname = htmlspecialchars($_POST["firstname"]);
+                $email = htmlspecialchars($_POST["email"]);
+                $birthDate = htmlspecialchars($_POST["birthDate"]);
+                $streetName = htmlspecialchars($_POST["streetName"]);
+                $city = htmlspecialchars($_POST["city"]);
+                $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+
+                User::create($_POST["civility"], $surname, $firstname, $email, $password, $birthDate, $streetName, $city, $_POST["postalCode"]);
             }
         }
+        return $messages;
+    }
+
+
+
+    public function signIn(): array {
+
+        $messages = [];
+
+        if(isset($_POST["submit"])) {
+            if(!isset($_POST["email"])) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer votre email de connexion."
+                ];
+            }
+            if(!isset($_POST["password"])) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer votre mot de passe."
+                ];
+            }
+
+            if(count($messages) == 0) {
+
+                $user = User::readOneUser($_POST["email"]);
+                if($user == false) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "Aucun utilisateur avec cet email trouvé."
+                    ];
+                } else {
+
+                    if(!password_verify($_POST["password"], $user->password)) {
+                        $messages[] = [
+                            "success" => false,
+                            "text" => "Mot de passe incorrect."
+                        ]; 
+                    } else {
+                        $messages[] = [
+                            "success" => true,
+                            "text" => "Vous êtes désormais connecté."
+                        ];
+
+                        $_SESSION["email"] = $_POST["email"];
+
+                        header("Location: /index.php");
+                    }
+                }
+            }
+        }
+
         return $messages;
     }
 }

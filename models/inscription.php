@@ -14,9 +14,6 @@ class User {
     public string $postalCode;
     public string $streetName;
 
- 
-
- 
 
     public static function create(string $civility, string $surname, string $firstname, string $email, string $password, string $birthDate, string $city, string $postalCode, string $streetName) {
         
@@ -35,6 +32,19 @@ class User {
         $statement->bindParam(":postalCode", $postalCode, PDO::PARAM_STR);
         $statement->bindParam(":streetName", $streetName, PDO::PARAM_STR);
         $statement->execute();
+    }
+
+    public static function readOneUser (string $email): User|false {
+        global $pdo;
+
+        $sql = "SELECT * from users WHERE email = :email";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":email", $email, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "User");
+        $user = $statement->fetch();
+
+        return $user; 
     }
 
 }

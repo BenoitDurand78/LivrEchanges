@@ -12,5 +12,4 @@ class NewBook {
     public string $category;
     public string $lang;
     
-
 }

@@ -3,11 +3,11 @@
 define("TITLE", "Inscription à Livr'Échanges");
 define("CSS", "inscription");
 
-require_once(__DIR__ . "/controllers/inscriptionController.php");
+require_once(__DIR__ . "/controllers/usersController.php");
 
-$inscriptionController = new inscriptionController;
+$usersController = new UsersController;
 
-$messages = $inscriptionController->inscriptionValidate();
+$messages = $usersController->inscriptionValidate();
 
 
 include(__DIR__ . "/assets/inc/header.php"); 
