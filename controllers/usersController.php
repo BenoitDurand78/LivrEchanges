@@ -98,7 +98,7 @@ class UsersController
                 $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 
-                User::create($_POST["civility"], $surname, $firstname, $email, $password, $birthDate, $streetName, $city, $_POST["postalCode"]);
+                User::create($_POST["civility"], $surname, $firstname, $email, $password, $birthDate, $city, $_POST["postalCode"], $streetName);
             }
         }
         return $messages;

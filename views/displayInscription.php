@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="col-12 mx-auto text-center">
+            <div class="col-12 mx-auto text-center createButton">
                 <button type="submit" class="btn btn-primary" name="submit">Créer mon compte</button>
             </div>
 

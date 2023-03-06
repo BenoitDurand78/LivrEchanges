@@ -44,7 +44,14 @@ class ContactController {
                     "success" => true,
                     "text" => "Votre message a bien été envoyé"
                 ];
-                Message::create($_POST["firstname"], $_POST["surname"], $_POST["email"], $_POST["messageSubject"], $_POST["message"]);
+
+                $firstname = htmlspecialchars($_POST["firstname"]);
+                $surname = htmlspecialchars($_POST["surname"]);
+                $email = htmlspecialchars($_POST["email"]);
+                $messageSubject = htmlspecialchars($_POST["messageSubject"]);
+                $message = htmlspecialchars($_POST["message"]);
+
+                Message::create($firstname, $surname, $email, $messageSubject, $message);
             }
         }
     return $messages;

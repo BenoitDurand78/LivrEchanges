@@ -55,7 +55,7 @@ if(isset($_SESSION["firstname"])) { ?>
               <a class="nav-link" href="/recherche.php">Recherche de livre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ajout.php">Ajout de livre</a>
+              <a class="nav-link" href="/ajouter-un-livre.php">Ajout de livre</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
