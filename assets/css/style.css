@@ -92,4 +92,10 @@ footer {
     background: #142243;
     border-radius: 100px;
     white-space: nowrap;
-  }
+}
+
+.alert {
+    width: 40%;
+    text-align: center;
+    margin: 1em auto;
+}

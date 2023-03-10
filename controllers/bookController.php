@@ -23,16 +23,17 @@ class BookController {
                     "text" => "Veuillez indiquer l'auteur du livre."
                 ];
             }
-            if(!isset($_POST["releaseYear"]) || ($_POST["releaseYear"]) < 1800 || ($_POST["releaseYear"]) > date("Y")) {
+            if(!isset($_POST["releaseYear"]) || ($_POST["releaseYear"]) < 1700 || ($_POST["releaseYear"]) > date("Y")) {
                 $messages[] = [
                     "success" => false,
                     "text" => "Veuillez indiquer une année de sortie du livre valide."
                 ];
             }
-            if(!isset($_POST["isbn"]) || !preg_match('^(?=(?:[^0-9]*[0-9]){10}(?:(?:[^0-9]*[0-9]){3})?$)[\\d-]+$', $_POST["isbn"]))  {
+            $validISBN = preg_match('@(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)@', $_POST["ISBN"]);
+            if(!isset($_POST["ISBN"]) || !$validISBN) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Veuillez indiquer un ISBN valide. Celui-ci doit être composé de 10 ou 13 chiffres, sans espaces ni tirets."
+                    "text" => "Veuillez indiquer un ISBN valide."
                 ];
             }
             if(!isset($_POST["publisher"]) || strlen($_POST["publisher"]) < 1) {
@@ -44,7 +45,7 @@ class BookController {
             if(!isset($_POST["category"]) || !in_array(($_POST["category"]), $categories)) {
                 $messages[] = [
                     "success" => false,
-                    "message" => "Veuillez indiquer la catégorie du livre parmi les choix disponibles."
+                    "text" => "Veuillez indiquer la catégorie du livre parmi les choix disponibles."
                 ];
             }
             if(!isset($_POST["lang"]) || strlen($_POST["lang"]) < 1) {
@@ -59,7 +60,7 @@ class BookController {
                 if($_FILES["picture"]["error"] != 0) {
                     $messages[] = [
                         "success" => false,
-                        "message" => "Une erreur a été rencontrée lors de l'envoi du fichier."
+                        "text" => "Une erreur a été rencontrée lors de l'envoi du fichier."
                     ];
                 }
                 $filetype = $_FILES["picture"]["type"];
@@ -67,7 +68,7 @@ class BookController {
                 if(!in_array($filetype, $extensions)) {
                     $messages[] = [
                         "success" => false,
-                        "message" => "Le format de l'image est incorrect, celui-ci peut être de type jpg, png ou webp."
+                        "text" => "Le format de l'image est incorrect, celui-ci peut être de type jpg, png ou webp."
                     ];
                 } 
                 $filesize = $_FILES["picture"]["size"]; 
@@ -75,7 +76,7 @@ class BookController {
                 if($filesize > $maxsize) {
                     $messages[] = [
                         "success" => false,
-                        "message" => "La taille du fichier est supérieure au poids maximal autorisé (1 Mo)."
+                        "text" => "La taille du fichier est supérieure au poids maximal autorisé (1 Mo)."
                     ];
                 } 
                 if(count($messages) == 0) {
@@ -90,7 +91,7 @@ class BookController {
             if(count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "message" => "Le fiche du livre a bien été créée."
+                    "text" => "Le fiche du livre a bien été créée."
                 ];
 
                 $title = htmlspecialchars($_POST["title"]);
@@ -100,7 +101,7 @@ class BookController {
                 $description = htmlspecialchars($_POST["description"]);
                 
 
-                NewBook::create($title, $author, $_POST["releaseYear"], $_POST["isbn"], $publisher, $_POST["category"], $lang, $description, $picture);
+                NewBook::create($title, $author, $_POST["releaseYear"], $_POST["ISBN"], $publisher, $_POST["category"], $lang, $description, $picture);
             }
         }
         return $messages;

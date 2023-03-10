@@ -19,7 +19,7 @@ class NewBook {
 
         global $pdo;
 
-        $sql = "INSERT INTO books (title, author, releaseYear, ISBN, publisher, category, lang, description, picture) VALUES (:title, :author, :releaseYear, :ISBN, :publisher, :category, :lang, :description :picture)"; 
+        $sql = "INSERT INTO books (title, author, releaseYear, ISBN, publisher, category, lang, description, picture) VALUES (:title, :author, :releaseYear, :ISBN, :publisher, :category, :lang, :description, :picture)"; 
 
         $statement = $pdo->prepare($sql);
         $statement->bindParam(":title", $title, PDO::PARAM_STR);
