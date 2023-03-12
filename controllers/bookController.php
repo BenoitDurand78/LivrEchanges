@@ -7,7 +7,7 @@ class BookController {
     public function createValidate(): array {
 
 
-        $categories = array("choix1", "choix2", "choix3", "choix4", "choix5", "choix6");
+        $categories = array("Art", "Bandes dessinées", "Biographies, autobiographies", "Cuisine", "Enfants", "Fiction", "Horreur", "Manga", "Musique", "Poésie", "Sciences", "Scolaire", "Sport", "Romans fantastiques", "Romans historiques", "Romans policiers, thrillers", "Romans de science-fiction", "Romans sentimentaux", "Voyages");
         $messages = [];
 
         if(isset($_POST["submit"])) {

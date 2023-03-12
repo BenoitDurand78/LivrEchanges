@@ -50,12 +50,25 @@ if(count($messages) > 0) {
         <label for="category">Catégorie du livre :</label>
         <select name="category" id="category">
             <option value="">--Sélectionner une option--</option>
-            <option value="choix1">choix1</option>
-            <option value="choix2">choix2</option>
-            <option value="choix3">choix3</option>
-            <option value="choix4">choix4</option>
-            <option value="choix5">choix5</option>
-            <option value="choix6">choix6</option>
+            <option value="Art">Art</option>
+            <option value="Bandes dessinées">Bandes dessinées</option>
+            <option value="Biographies, autobiographies">Biographies / Autobiographies</option>
+            <option value="Cuisine">Cuisine</option>
+            <option value="Enfants">Enfants</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Horreur">Horreur</option>
+            <option value="Manga">Manga</option>
+            <option value="Musique">Musique</option>
+            <option value="Poésie">Poésie</option>
+            <option value="Sciences">Sciences</option>
+            <option value="Scolaire">Scolaire</option>
+            <option value="Sport">Sport</option>
+            <option value="Romans fantastiques">Romans fantastiques</option>
+            <option value="Romans historiques">Romans historiques</option>
+            <option value="Romans policiers, thrillers">Romans policiers, thrillers</option>
+            <option value="Romans de science-fiction">Romans de science-fiction</option>
+            <option value="Romans sentimentaux">Romans sentimentaux</option>
+            <option value="Voyages">Voyages</option>
         </select>
     </div>
 
