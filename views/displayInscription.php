@@ -14,13 +14,15 @@
             }
         }
 
+        var_dump($_FILES["picture"]);
+
         ?>
 
         <form action="#" method="POST" enctype="multipart/form-data" class="container g-5 mx-auto">
             <div class="row g-3 m-3 justify-content-center">
                 <div class="col-12 mx-auto text-center">
-                    <label for="photo"><i class="bi bi-person-bounding-box" style="font-size: 100px"></i></label><br />
-                    <input type="file" id="photo" name="photo">
+                    <label for="picture"><i class="bi bi-person-bounding-box" style="font-size: 100px"></i></label><br />
+                    <input type="file" id="picture" name="picture">
                 </div>
             </div>
 

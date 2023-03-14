@@ -83,6 +83,43 @@ class UsersController
                 ];
             }
 
+            if(isset($_FILES["picture"]) && ($_FILES["picture"]["error"]) != 4) {
+
+                if($_FILES["picture"]["error"] != 0) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "Une erreur a été rencontrée lors de l'envoi du fichier."
+                    ];
+                }
+
+                $filetype = $_FILES["picture"]["type"];
+                $extensions = ["image/png", "image/jpeg", "image/webp"];
+                if(!in_array($filetype, $extensions)) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "Le format de l'image est incorrect, celui-ci peut être de type jpg, png ou webp."
+                    ];
+                } 
+
+                $filesize = $_FILES["picture"]["size"]; 
+                $maxsize = 1048576;
+                if($filesize > $maxsize) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "La taille du fichier est supérieure au poids maximal autorisé (1 Mo)."
+                    ];
+                } 
+                if(count($messages) == 0) {
+
+                    $picture = time() . $_FILES["picture"]["name"]; 
+                    move_uploaded_file($_FILES["picture"]["tmp_name"], __DIR__ . "/../assets/img/users/" . $picture);
+                }
+            } 
+            else {
+                $picture = "avatar.png"; 
+            }
+
+
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
@@ -98,7 +135,7 @@ class UsersController
                 $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 
-                User::create($_POST["civility"], $surname, $firstname, $email, $password, $birthDate, $city, $_POST["postalCode"], $streetName);
+                User::create($_POST["civility"], $surname, $firstname, $email, $password, $birthDate, $city, $_POST["postalCode"], $streetName, $picture);
             }
         }
         return $messages;

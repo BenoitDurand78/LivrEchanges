@@ -1,13 +1,13 @@
 <?php
 
-require_once(__DIR__ . "/../models/newBook.php");
+require_once(__DIR__ . "/../models/book.php");
 
 class BookController {
 
     public function createValidate(): array {
 
 
-        $categories = array("Art", "Bandes dessinées", "Biographies, autobiographies", "Cuisine", "Enfants", "Fiction", "Horreur", "Manga", "Musique", "Poésie", "Sciences", "Scolaire", "Sport", "Romans fantastiques", "Romans historiques", "Romans policiers, thrillers", "Romans de science-fiction", "Romans sentimentaux", "Voyages");
+        $categories = array("Art", "Bandes dessinées", "Biographies, autobiographies", "Contes", "Cuisine", "Enfants", "Epopées", "Fictions", "Horreur", "Mangas", "Musique", "Philosophie", "Poésie", "Religion", "Romans fantastiques", "Romans historiques", "Romans policiers, thrillers", "Romans de science-fiction", "Romans sentimentaux", "Sciences", "Scolaire", "Sport", "Théâtre", "Voyages");
         $messages = [];
 
         if(isset($_POST["submit"])) {
@@ -23,7 +23,7 @@ class BookController {
                     "text" => "Veuillez indiquer l'auteur du livre."
                 ];
             }
-            if(!isset($_POST["releaseYear"]) || ($_POST["releaseYear"]) < 1700 || ($_POST["releaseYear"]) > date("Y")) {
+            if(!isset($_POST["releaseYear"]) || ($_POST["releaseYear"]) < 1500 || ($_POST["releaseYear"]) > date("Y")) {
                 $messages[] = [
                     "success" => false,
                     "text" => "Veuillez indiquer une année de sortie du livre valide."
@@ -101,9 +101,27 @@ class BookController {
                 $description = htmlspecialchars($_POST["description"]);
                 
 
-                NewBook::create($title, $author, $_POST["releaseYear"], $_POST["ISBN"], $publisher, $_POST["category"], $lang, $description, $picture);
+                Book::create($title, $author, $_POST["releaseYear"], $_POST["ISBN"], $publisher, $_POST["category"], $lang, $description, $picture);
             }
         }
         return $messages;
     }
+
+
+    public function readAllValidate(): array {
+        if(isset($_GET["bookSearch"])) {
+            $books = Book::bookSearch(); 
+        } else {
+            $books = Book::readAll();
         }
+        return $books;
+    }
+
+
+
+
+
+
+
+
+}

@@ -2,7 +2,7 @@
 
 require_once(__DIR__ . "/../assets/inc/connectionDB.php");
 
-class NewBook {
+class Book {
     public int $id_book; 
     public string $title;
     public string $author;
@@ -13,6 +13,7 @@ class NewBook {
     public string $lang;
     public ?string $description;
     public ?string $picture;
+    public ?string $id_user;
 
     
     public static function create(string $title, string $author, int $releaseYear, string $ISBN, string $publisher,  string $category, string $lang, ?string $description, ?string $picture) {
@@ -32,5 +33,30 @@ class NewBook {
         $statement->bindParam(":description", $description, PDO::PARAM_STR);
         $statement->bindParam(":picture", $picture, PDO::PARAM_STR);
         $statement->execute();
+    }
+
+    public static function readAll(): array {
+        global $pdo;
+
+        $sql = "SELECT * FROM books";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "Book");
+        $books = $statement->fetchAll();
+        return $books;
+    }
+
+
+    public static function bookSearch(): array {
+        global $pdo;
+        $bookSearch = '%' . $_GET["bookSearch"] . '%';
+
+        $sql = "SELECT * FROM books WHERE title LIKE :bookSearch OR author LIKE :bookSearch";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":bookSearch", $bookSearch, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "Book");
+        $books = $statement->fetchAll();
+        return $books;
     }
 }

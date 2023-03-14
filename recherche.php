@@ -5,11 +5,9 @@ define("TITLE", "Ajout d'un livre");
 define("CSS", "bookSearch");
 
 
-
-
-
-
-
+require_once(__DIR__ . "/controllers/bookController.php");
+$bookController = new BookController;
+$books = $bookController->readAllValidate();
 
 
 
