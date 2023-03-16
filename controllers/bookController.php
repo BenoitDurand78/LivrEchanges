@@ -117,7 +117,25 @@ class BookController {
         return $books;
     }
 
+    public function readOneValidate(): Book {
 
+        if(!isset($_GET["id"])) {
+            echo "L'identifiant de ce livre n'existe pas dans notre base de données.";
+            die;
+        } elseif(!is_numeric($_GET["id"])) {
+            echo "L'identifiant d'un livre ne peut être que numérique.";
+            die;
+        } else {
+            $id_book = $_GET["id"];
+            $book = Book::readOne($id_book);
+
+            if($book == false) {
+                echo "Aucun patient n'a été trouvé avec cet ID : " . $id_book;
+                die;
+            }
+        }
+        return $book; 
+    }
 
 
 

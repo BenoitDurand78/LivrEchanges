@@ -36,8 +36,6 @@ input, select {
     border: 3px solid #142243;
 }
 
-
-
 .formEntries {
     display: flex;
     flex-direction: row;

@@ -22,7 +22,7 @@
                 <h3 class="card-title"><?= $book->title ?></h3>
                 <p class="card-text">écrit par <?= $book->author?></p>
                 <p class="card-text">publié en <?= $book->releaseYear ?></p>
-
+                <a class="card-text" href="/../fiche-livre.php?id=<?= $book->id_book ?>"><button class="btn">Consulter la fiche de ce livre</button></a>
             </div>
         </div>
     </div>

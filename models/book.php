@@ -46,6 +46,23 @@ class Book {
         return $books;
     }
 
+    public static function readOne(int $id_book) : Book|false {
+        global $pdo; 
+    
+        $sql = "SELECT id_book, title, author, releaseYear, ISBN, publisher, category, lang, description, picture FROM books WHERE id_book = :id_book";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":id_book", $id_book, PDO::PARAM_INT);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "Book");
+        $book = $statement->fetch();
+
+        if($book == false)  {
+            return false;
+        } else {
+            return $book;   
+        }
+    
+    }
 
     public static function bookSearch(): array {
         global $pdo;
