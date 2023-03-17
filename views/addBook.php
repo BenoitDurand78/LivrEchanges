@@ -46,7 +46,6 @@ if(count($messages) > 0) {
     </div>
 
     <div class="col-sm-6 g-4 d-flex flex-wrap formEntries">
-        <!-- Faire la liste des catégories ici -->
         <label for="category">Catégorie du livre :</label>
         <select name="category" id="category">
             <option value="">--Sélectionner une option--</option>

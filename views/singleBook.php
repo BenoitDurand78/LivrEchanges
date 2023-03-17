@@ -15,3 +15,36 @@
         <p>Description du livre : <?= $book->description ?></p>
     </div>
 </div>
+
+<hr/>
+
+<div class="donation">
+    <div class="donationIntro">
+        <p>Vous possédez ce livre et souhaitez le donner?</p>
+        <button class="btn btn-primary">Cliquez ici pour remplir le formulaire</button>
+    </div>
+    <!-- JS pour afficher masquer formulaire -->
+    <form action="#" method="POST">
+        <div class="donationForm">
+            <div class="bookCondition">
+                <label for="bookCondition">État du livre :</label>
+                    <select name="bookCondition" id="bookCondition">
+                        <option value="">--Sélectionner une option--</option>
+                        <option value="Neuf">Neuf</option>
+                        <option value="Très bon état">Très bon état</option>
+                        <option value="État correct">État correct</option>
+                        <option value="Mauvais état">Mauvais état</option>
+                    </select>
+            </div>
+
+            <div class="donationComment">
+                <label for="donationComment">Commentaire sur le livre en votre possession (facultatif) : </label>
+                <textarea id="donationComment" name="donationComment" rows="5" cols="25">
+                </textarea>    
+            </div>
+        </div>
+        <div class="donationSubmit">
+            <button type="submit" class="btn btn-primary" name="submit">Me mettre sur la liste des donneurs</button>
+        </div>
+    </form>
+</div>
