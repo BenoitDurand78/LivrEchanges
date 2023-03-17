@@ -13,4 +13,5 @@ $books = $bookController->readAllValidate();
 
 include(__DIR__ . "/assets/inc/header.php"); 
 include(__DIR__ . "/views/bookSearch.php");
+include(__DIR__ . "/assets/inc/top.php"); 
 include(__DIR__ . "/assets/inc/footer.php");

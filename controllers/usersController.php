@@ -182,7 +182,9 @@ class UsersController
                             "text" => "Vous êtes désormais connecté."
                         ];
 
+                        $_SESSION["email"] = $user->email;
                         $_SESSION["firstname"] = $user->firstname;
+                        $_SESSION["id_user"] = $user->id_user;
 
                         header("Location: /index.php");
                     }
@@ -191,5 +193,19 @@ class UsersController
         }
 
         return $messages;
+    }
+
+    public function verifyLogin(): void {
+        if(!isset($_SESSION["id_user"])) {
+            $_SESSION["message"] = "Merci de vous connecter pour accéder à cette page.";
+            header("Location: /connection.php");
+        }
+    }
+
+    public function readOneValidate(): User {
+        if(isset($_SESSION["email"])) {
+            $user = User::readOneUser($_SESSION["email"]);
+        }
+        return $user; 
     }
 }

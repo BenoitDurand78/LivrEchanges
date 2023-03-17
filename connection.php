@@ -12,4 +12,5 @@ $messages = $existingUser->signIn();
 
 include(__DIR__ . "/assets/inc/header.php"); 
 include(__DIR__ . "/views/displayConnection.php");
+include(__DIR__ . "/assets/inc/top.php"); 
 include(__DIR__ . "/assets/inc/footer.php");

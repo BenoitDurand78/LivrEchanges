@@ -50,7 +50,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-top: 200px;
+    margin-top: 70px;
 }
 
 #logoFooter {
@@ -82,7 +82,7 @@ footer {
     bottom: 20px;      
     margin-right: 10px; 
     place-self: end;
-    /* margin-top: calc(10vh + var(--offset)); */
+    margin-top: calc(100vh + var(--offset));
     left: 93%;
     /* visual styling */
     text-decoration: none;

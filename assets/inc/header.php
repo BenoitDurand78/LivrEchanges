@@ -27,7 +27,7 @@
 
 <?php
 
-if(isset($_SESSION["firstname"])) { ?>
+if(isset($_SESSION["email"])) { ?>
   <p id="welcome"> Bienvenue <?= $_SESSION["firstname"] ?> ! <a href="/deconnexion.php">Déconnexion</a></p> <?php
 }
 
@@ -49,7 +49,7 @@ if(isset($_SESSION["firstname"])) { ?>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
+              <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/recherche.php">Recherche de livre</a>
@@ -83,3 +83,4 @@ if(isset($_SESSION["firstname"])) { ?>
   <hr/>
 
 </header>
+<main>

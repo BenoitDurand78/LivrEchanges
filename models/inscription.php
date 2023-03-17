@@ -14,6 +14,7 @@ class User {
     public string $postalCode;
     public string $streetName;
     public string $picture;
+    public ?string $id_roles;
 
 
     public static function create(string $civility, string $surname, string $firstname, string $email, string $password, string $birthDate, string $city, string $postalCode, string $streetName, string $picture) {
@@ -48,4 +49,6 @@ class User {
 
         return $user; 
     }
+
+
 }

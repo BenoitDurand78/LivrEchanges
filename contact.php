@@ -13,4 +13,5 @@ $messages = $contactController->createMessageValidate();
 
 include(__DIR__ . "/assets/inc/header.php"); 
 include(__DIR__ . "/views/displayContact.php");
+include(__DIR__ . "/assets/inc/top.php"); 
 include(__DIR__ . "/assets/inc/footer.php");
