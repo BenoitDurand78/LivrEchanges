@@ -1,5 +1,19 @@
 <h2>Fiche livre</h2>
 
+<?php
+
+if(count($messages) > 0) {
+    foreach($messages as $message) {
+        if($message["success"]) { ?>
+            <p class="alert alert-success"><?= $message["text"] ?></p>
+        <?php }
+        else { ?>
+            <p class="alert alert-danger"><?= $message["text"] ?></p>
+        <?php }
+    }
+}
+
+?>
 
 <div class="bookSection">
     <div class="bookPicture">
@@ -38,8 +52,8 @@
             </div>
 
             <div class="donationComment">
-                <label for="donationComment">Commentaire sur le livre en votre possession (facultatif) : </label>
-                <textarea id="donationComment" name="donationComment" rows="5" cols="25">
+                <label for="donationComment">Commentaire sur le livre en votre possession (facultatif, 500 caractères maximum) : </label>
+                <textarea id="donationComment" name="donationComment" rows="5" cols="40">
                 </textarea>    
             </div>
         </div>

@@ -21,7 +21,7 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
 }
 
 
@@ -50,9 +50,6 @@ p {
     margin: auto;
 }
 
-textarea {
-    width: 100%;
-}
 
 .donationForm {
     display: flex;
@@ -72,4 +69,25 @@ textarea {
 .donationIntro, .donationSubmit {
     margin: auto;
     text-align: center;
+}
+
+.card {
+    width: 75%;
+    margin: auto;
+}
+
+.donorPicture {
+    width: 100%;
+}
+
+.card-img {
+    width: 35%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
