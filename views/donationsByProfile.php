@@ -1,6 +1,6 @@
 <section>
 
-<h2>Liste de vos dons </h2>
+<h2 id="donationsList">Liste de vos dons </h2>
 
 
 <?php 
@@ -27,6 +27,8 @@ if($donations == [])  {
                         <p class="card-text">Offre publiée le <?= $donation->displayDate() ?></p>
                         <p class="card-text">Commentaire additionnel : <?= $donation->donationComment ?></p>
                         <a class="card-text" href="../fiche-livre.php?id=<?= $donation->book->id_book ?>">Fiche du livre</a>
+                        <br/>
+                        <a class="card-text" href="../modifier-un-don.php?id_donation=<?= $donation->id_donation ?>">Modifier ce don</a>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@ class BookController {
                     "text" => "Veuillez indiquer l'auteur du livre."
                 ];
             }
-            if(!isset($_POST["releaseYear"]) || ($_POST["releaseYear"]) < 1500 || ($_POST["releaseYear"]) > date("Y")) {
+            if(!isset($_POST["releaseYear"]) || ($_POST["releaseYear"]) < 1000 || ($_POST["releaseYear"]) > date("Y")) {
                 $messages[] = [
                     "success" => false,
                     "text" => "Veuillez indiquer une année de sortie du livre valide."

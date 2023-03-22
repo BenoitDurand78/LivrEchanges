@@ -3,7 +3,7 @@
 <section>
     <div id="profil">
         <div>
-            <img src="/../assets/img/users/<?= $user->picture ?>" alt="Photo de profil">
+            <img class="profilPicture" src="/../assets/img/users/<?= $user->picture ?>" alt="Photo de profil">
         </div>
         <div class="infoProfile">
             <i class="bi bi-person-fill" style="font-size: 60px;"></i>

@@ -9,8 +9,6 @@ define("SCRIPT", "script");
 
 
 
-
-
 include(__DIR__ . "/assets/inc/header.php"); 
 
 include(__DIR__ . "/views/quotesIndex.php"); 

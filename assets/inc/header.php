@@ -64,7 +64,7 @@ if(isset($_SESSION["email"])) { ?>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="connection.php">Connexion</a></li>
                 <li><a class="dropdown-item" href="/profil.php">Mon profil</a></li>
-                <li><a class="dropdown-item" href="#">Mes dons en cours</a></li>
+                <li><a class="dropdown-item" href="/profil.php#donationsList">Mes dons en cours</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>

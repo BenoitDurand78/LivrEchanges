@@ -88,8 +88,7 @@ if(count($messages) > 0) {
 
     <div class="col-12 g-4">
         <label for="description">Description du livre (texte en quatrième de couverture) : </label>
-        <textarea id="description" name="description" rows="5" cols="33">
-        </textarea>
+        <textarea id="description" name="description" rows="5" cols="33"></textarea>
     </div>
 
         <div class="col-6 mx-auto g-5 text-center">

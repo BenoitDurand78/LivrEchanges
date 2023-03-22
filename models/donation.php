@@ -5,7 +5,7 @@ require_once(__DIR__ . "/book.php");
 require_once(__DIR__ . "/user.php");
 
 class Donation {
-    public int $id_donations; 
+    public int $id_donation; 
     public string $bookCondition;
     public string $donationDate;
     public string $donationComment;
@@ -67,7 +67,7 @@ class Donation {
         global $pdo;
         $id_user = $_SESSION["id_user"];
 
-        $sql = "SELECT id_user, bookCondition, donationDate, donationComment, id_book FROM donations WHERE id_user = :id_user";
+        $sql = "SELECT id_donation, id_user, bookCondition, donationDate, donationComment, id_book FROM donations WHERE id_user = :id_user";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(":id_user", $id_user, PDO::PARAM_INT);
         $statement->execute();
@@ -89,6 +89,61 @@ class Donation {
 
             return $donations;
         }
+    }
+
+
+    public static function readOne(int $id_donation): Donation|false {
+
+        global $pdo;
+
+        $sql = "SELECT * FROM donations WHERE id_donation = :id_donation";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":id_donation", $id_donation, PDO::PARAM_INT);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "Donation");
+        $donation = $statement->fetch();
+
+        if($donation == false) {
+            return false;
+        } else {
+            $id_book = $donation->id_book;
+            $sql = "SELECT * FROM books WHERE id_book = :id_book";
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(":id_book", $id_book, PDO::PARAM_INT);
+            $statement->execute();
+            $statement->setFetchMode(PDO::FETCH_CLASS, "Book");
+            $book = $statement->fetch();
+            $donation->book = $book; 
+
+            return $donation;
+        }
+    }
+
+
+
+    public static function update(int $id_donation, string $bookCondition, string $donationDate, string $donationComment, int $id_user, int $id_book): void {
+        global $pdo; 
+
+        $id_user = $_SESSION["id_user"];
+        $id_donation = $_GET["id_donation"];
+        $id_book = Donation::readOne($_GET["id_donation"])->id_book; 
+        
+        $sql = "UPDATE donations 
+        SET bookCondition = :bookCondition,
+        donationDate = :donationDate,
+        donationComment = :donationComment,
+        id_user = :id_user, 
+        id_book = :id_book
+        WHERE id_donation = :id_donation";
+    
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":bookCondition", $bookCondition, PDO::PARAM_STR);
+        $statement->bindParam(":donationDate", $donationDate, PDO::PARAM_STR);
+        $statement->bindParam(":donationComment", $donationComment, PDO::PARAM_STR);
+        $statement->bindParam(":id_user", $id_user, PDO::PARAM_INT);
+        $statement->bindParam(":id_book", $id_book, PDO::PARAM_INT);
+        $statement->bindParam(":id_donation", $id_donation, PDO::PARAM_INT);
+        $statement->execute();
     }
 
 }

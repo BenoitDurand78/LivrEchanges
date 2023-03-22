@@ -21,6 +21,11 @@ p {
     margin: auto;
 }
 
+.profilPicture {
+    width: 100%;
+    max-width: 400px;
+}
+
 .infoProfile {
     display: flex;
     flex-direction: column;
@@ -61,4 +66,25 @@ p {
     color: #142243;
     font-size: 1em;
     border: 3px solid #142243;
+}
+
+.card {
+    width: 75%;
+    margin: auto;
+}
+
+.bookPicture {
+    width: 100%;
+}
+
+.card-img {
+    width: 35%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
