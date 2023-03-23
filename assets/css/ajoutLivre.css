@@ -27,6 +27,7 @@ input, select {
     font-size: 1.2em;
     border: 3px solid #142243;
     min-height: 50px;
+    transition-duration: 0.3s;
 }
 
 .btn:hover {

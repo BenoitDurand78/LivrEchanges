@@ -53,8 +53,7 @@ if(count($messages) > 0) {
 
             <div class="donationComment">
                 <label for="donationComment">Commentaire sur le livre en votre possession (facultatif, 500 caractères maximum) : </label>
-                <textarea id="donationComment" name="donationComment" rows="5" cols="40">
-                </textarea>    
+                <textarea id="donationComment" name="donationComment" rows="5" cols="40"></textarea>    
             </div>
         </div>
         <div class="donationSubmit">

@@ -49,7 +49,7 @@ if(isset($_SESSION["email"])) { ?>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
+              <a class="nav-link" aria-current="page" href="/index.php">Accueil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/recherche.php">Recherche de livre</a>
@@ -62,7 +62,7 @@ if(isset($_SESSION["email"])) { ?>
                 Espace personnel
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="connection.php">Connexion</a></li>
+                <li><a class="dropdown-item" href="/connection.php">Connexion</a></li>
                 <li><a class="dropdown-item" href="/profil.php">Mon profil</a></li>
                 <li><a class="dropdown-item" href="/profil.php#donationsList">Mes dons en cours</a></li>
                 <li>
@@ -72,7 +72,7 @@ if(isset($_SESSION["email"])) { ?>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="/contact.php">Contact</a>
             </li>
           </ul>
         </div>

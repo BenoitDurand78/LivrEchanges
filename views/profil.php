@@ -24,7 +24,7 @@
     </div>
     
     <div id="buttonsProfile">
-        <button class="btn btn-primary">Modifier mes informations personnelles</button>
+        <a class="card-text" href="/../modifier-profil.php/"><button class="btn">Modifier vos informations personnelles</button></a>
         <button class="btn btn-primary">Voir mes dons en cours</button>
     </div>
 

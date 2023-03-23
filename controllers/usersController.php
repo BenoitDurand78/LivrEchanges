@@ -182,9 +182,17 @@ class UsersController
                             "text" => "Vous êtes désormais connecté."
                         ];
 
-                        $_SESSION["email"] = $user->email;
-                        $_SESSION["firstname"] = $user->firstname;
                         $_SESSION["id_user"] = $user->id_user;
+                        $_SESSION["civility"] = $user->civility;
+                        $_SESSION["surname"] = $user->surname;
+                        $_SESSION["firstname"] = $user->firstname;
+                        $_SESSION["email"] = $user->email;
+                        $_SESSION["password"] = $user->password;
+                        $_SESSION["birthDate"] = $user->birthDate;
+                        $_SESSION["city"] = $user->city;
+                        $_SESSION["postalCode"] = $user->postalCode;
+                        $_SESSION["streetName"] = $user->streetName;
+                        $_SESSION["picture"] = $user->picture;
 
                         header("Location: /index.php");
                     }
@@ -207,5 +215,104 @@ class UsersController
             $user = User::readOneUser($_SESSION["email"]);
         }
         return $user; 
+    }
+
+    public function updateValidate(): array {
+
+        $messages = [];
+
+        if (isset($_POST["submit"])) {
+
+            if (!isset($_POST["surname"]) || strlen($_POST["surname"]) < 1) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer votre nom."
+                ];
+            }
+
+            if (!isset($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer un email valide."
+                ];
+            }
+
+            if (!isset($_POST["streetName"]) || strlen($_POST["streetName"]) < 1) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer un numéro et un nom de rue."
+                ];
+            }
+
+            if (!isset($_POST["city"]) || strlen($_POST["city"]) < 1) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer votre ville d'habitation."
+                ];
+            }
+
+            $numberPostalCode = preg_match('@^[0-9]{5}$@', $_POST["postalCode"]);
+            if (!isset($_POST["postalCode"]) || !$numberPostalCode) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer un code postal valide."
+                ];
+            }
+
+            if(isset($_FILES["picture"]) && ($_FILES["picture"]["error"]) != 4) {
+
+                if($_FILES["picture"]["error"] != 0) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "Une erreur a été rencontrée lors de l'envoi du fichier."
+                    ];
+                }
+
+                $filetype = $_FILES["picture"]["type"];
+                $extensions = ["image/png", "image/jpeg", "image/webp"];
+                if(!in_array($filetype, $extensions)) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "Le format de l'image est incorrect, celui-ci peut être de type jpg, png ou webp."
+                    ];
+                } 
+
+                $filesize = $_FILES["picture"]["size"]; 
+                $maxsize = 1048576;
+                if($filesize > $maxsize) {
+                    $messages[] = [
+                        "success" => false,
+                        "text" => "La taille du fichier est supérieure au poids maximal autorisé (1 Mo)."
+                    ];
+                } 
+                if(count($messages) == 0) {
+
+                    $picture = time() . $_FILES["picture"]["name"]; 
+                    move_uploaded_file($_FILES["picture"]["tmp_name"], __DIR__ . "/../assets/img/users/" . $picture);
+                }
+            } 
+            else {
+                $picture = $_SESSION["picture"]; 
+            }
+
+
+            if (count($messages) == 0) {
+                $messages[] = [
+                    "success" => true,
+                    "text" => "Vos informations personnelles ont bien été modifiées."
+                ];
+
+                $surname = htmlspecialchars($_POST["surname"]);
+                $email = htmlspecialchars($_POST["email"]);
+                $streetName = htmlspecialchars($_POST["streetName"]);
+                $city = htmlspecialchars($_POST["city"]);
+
+                
+                User::update($_SESSION["id_user"], $_SESSION["civility"], $surname, $_SESSION["firstname"], $email, $_SESSION["password"], $_SESSION["birthDate"], $city, $_POST["postalCode"], $streetName, $picture);
+            }
+        }
+
+        return $messages;
+    
     }
 }

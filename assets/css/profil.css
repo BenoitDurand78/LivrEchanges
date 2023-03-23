@@ -59,6 +59,7 @@ p {
     font-size: 1em;
     border: 3px solid #142243;
     margin-top: 1em;
+    transition-duration: 0.3s;
 }
 
 .btn:hover {
