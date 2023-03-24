@@ -78,4 +78,39 @@ class Book {
     }
 
 
+    public static function numberOfBooks(): int {
+
+        global $pdo; 
+
+        $sql = "SELECT COUNT(*) AS nb_books FROM books";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+
+        $books = $statement->fetch();
+        $nbBooks = (int) $books["nb_books"]; 
+
+        return $nbBooks;
+    }
+
+
+    public static function readBooks(int $currentPage): array {
+        global $pdo; 
+
+        $byPage = 12; 
+
+        $firstBook = ($currentPage * $byPage) - $byPage; 
+
+        $sql = "SELECT * FROM books LIMIT :firstBook, :byPage";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":firstBook", $firstBook, PDO::PARAM_INT);
+        $statement->bindParam(":byPage", $byPage, PDO::PARAM_INT);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "Book");
+        $BooksList = $statement->fetchAll();
+
+        return $BooksList; 
+
+    }
+
+
 }

@@ -36,6 +36,10 @@ class BookController {
                     "text" => "Veuillez indiquer un ISBN valide."
                 ];
             }
+
+//  ISBN UNIQUE 
+
+
             if(!isset($_POST["publisher"]) || strlen($_POST["publisher"]) < 1) {
                 $messages[] = [
                     "success" => false,
@@ -112,7 +116,7 @@ class BookController {
         if(isset($_GET["bookSearch"])) {
             $books = Book::bookSearch(); 
         } else {
-            $books = Book::readAll();
+            $books = $this->readBooksValidate();
         }
         return $books;
     }
@@ -137,9 +141,40 @@ class BookController {
         return $book; 
     }
 
+    public function currentPage(): int {
+        if(isset($_GET['page']) && !empty($_GET['page'])) {
+            $currentPage = (int) $_GET['page'];
+        }else{
+            $currentPage = 1;
+        }
+        return $currentPage;
+    }
+
+    public static function numberOfPages() {
+        $byPage = 12;
+        $nbBooks = Book::numberOfBooks(); 
+
+        $pages = ceil($nbBooks / $byPage);
+
+        return $pages;
+        
+    }
 
 
-
+    public function readBooksValidate(): array {
+        $booksList = [];
+        $currentPage = BookController::currentPage();
+        if(!isset($_GET["page"])) {
+            echo "Veuillez indiquer le numéro d'une page à afficher.";
+            die;
+        } elseif(!is_numeric($_GET["page"])) {
+            echo "Le numéro de la page de la liste des patients doit être de type numérique.";
+            die;
+        } else {
+            $booksList = Book::readBooks($currentPage); 
+        }
+        return $booksList; 
+    }
 
 
 }

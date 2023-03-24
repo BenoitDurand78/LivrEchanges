@@ -1,7 +1,7 @@
 <section>
 
     <h2 id="bookSearch">Rechercher un livre ou un auteur</h2>
-    <form action="/recherche.php" method="GET" class="bookSearchForm">
+    <form action="/recherche.php?page=1" method="GET" class="bookSearchForm">
         <input type="search" name="bookSearch" class="search" placeholder="Titre du livre ou nom de l'auteur" size="30px">
         <button type="submit" class="btn btn-primary" name="submit" id="btn-search">Rechercher</button>
     </form>
@@ -36,5 +36,25 @@
 ?>
 
 </div>
+
+
+<nav class="paginationNav">
+    <ul class="pagination">
+
+        <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+            <a href="/recherche.php?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
+        </li>
+        <?php for($page = 1; $page <= $pages; $page++): ?>
+
+            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                <a href="/recherche.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+            </li>
+        <?php endfor ?>
+
+            <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+            <a href="/recherche.php?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
+        </li>
+    </ul>
+</nav>
 
 </section>

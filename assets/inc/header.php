@@ -52,7 +52,7 @@ if(isset($_SESSION["email"])) { ?>
               <a class="nav-link" aria-current="page" href="/index.php">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/recherche.php">Recherche de livre</a>
+              <a class="nav-link" href="/recherche.php?page=1">Recherche de livre</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/ajouter-un-livre.php">Ajout de livre</a>

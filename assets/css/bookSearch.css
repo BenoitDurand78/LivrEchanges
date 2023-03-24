@@ -72,3 +72,31 @@ card {
     justify-content: center;
     margin: 1em auto;
 }
+
+.paginationNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5em auto;
+    line-height: 1.5em;
+    color: #142243;
+    width: 100%;
+}
+
+.page-link, .page-item {
+    color: #142243;
+    background-color: white;
+}
+
+.page-link:hover {
+    color: #142243;
+    background-color: rgba(112, 128, 144, 0.166);
+}
+
+.active {
+    --bs-pagination-active-bg: #142243;
+    --bs-pagination-active-border-color: #142243;
+    color: white;
+    background-color: #142243;
+    border-color: #142243;
+}
