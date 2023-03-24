@@ -29,6 +29,8 @@ if($donations == [])  {
                         <a class="card-text" href="../fiche-livre.php?id=<?= $donation->book->id_book ?>">Fiche du livre</a>
                         <br/>
                         <a class="card-text" href="../modifier-un-don.php?id_donation=<?= $donation->id_donation ?>">Modifier ce don</a>
+                        <br/>
+                        <a class="card-text" href="../supprimer-un-don.php?id_donation=<?= $donation->id_donation ?>">Supprimer ce don</a>
                     </div>
                 </div>
             </div>

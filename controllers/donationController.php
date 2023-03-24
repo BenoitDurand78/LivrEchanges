@@ -77,6 +77,18 @@ class DonationController {
         $bookConditions = array("Neuf", "Très bon état", "État correct", "Mauvais état");
         $messages = [];
 
+        if(!isset($_GET["id_donation"])) {
+            echo "Veuillez indiquer un numéro de donation.";
+            die;
+        } 
+
+        $id_user = Donation::readOne($_GET["id_donation"])->id_user;
+
+        if($id_user != $_SESSION["id_user"]) {
+            echo "Le numéro de la donation n'est pas valide.";
+            die;
+        }
+
         if(isset($_POST["submit"])) {
 
             if(!isset($_POST["bookCondition"]) || !in_array(($_POST["bookCondition"]), $bookConditions)) {
@@ -104,6 +116,25 @@ class DonationController {
             }
         }
         return $messages;
+    }
+
+
+    public function deleteValidate() {
+
+        if(!isset($_GET["id_donation"])) {
+            echo "Veuillez indiquer un numéro de donation.";
+            die;
+        } 
+
+        $id_user = Donation::readOne($_GET["id_donation"])->id_user;
+
+        if($id_user != $_SESSION["id_user"]) {
+            echo "Le numéro de la donation n'est pas valide.";
+            die;
+        }
+
+        $id_donation = $_GET["id_donation"];
+        Donation::delete($id_donation);
     }
 
 }

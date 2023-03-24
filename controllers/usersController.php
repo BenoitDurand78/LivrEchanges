@@ -230,10 +230,17 @@ class UsersController
                 ];
             }
 
-            if (!isset($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+            if (!isset($_POST["firstname"]) || strlen($_POST["firstname"]) < 1) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Veuillez indiquer un email valide."
+                    "text" => "Veuillez indiquer votre prénom."
+                ];
+            }
+
+            if (!isset($_POST["civility"]) || !in_array($_POST["civility"], ["Monsieur", "Madame"])) {
+                $$messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer votre civilité."
                 ];
             }
 
@@ -303,16 +310,68 @@ class UsersController
                 ];
 
                 $surname = htmlspecialchars($_POST["surname"]);
-                $email = htmlspecialchars($_POST["email"]);
+                $firstname = htmlspecialchars($_POST["firstname"]);
                 $streetName = htmlspecialchars($_POST["streetName"]);
                 $city = htmlspecialchars($_POST["city"]);
 
                 
-                User::update($_SESSION["id_user"], $_SESSION["civility"], $surname, $_SESSION["firstname"], $email, $_SESSION["password"], $_SESSION["birthDate"], $city, $_POST["postalCode"], $streetName, $picture);
+                User::update($_SESSION["id_user"], $_POST["civility"], $surname, $firstname, $_SESSION["email"], $_SESSION["password"], $_SESSION["birthDate"], $city, $_POST["postalCode"], $streetName, $picture);
             }
         }
 
         return $messages;
     
     }
+
+    public function secondUpdateValidate(): array {
+    
+        $messages = [];
+
+        if (isset($_POST["submit"])) {
+
+            if (!isset($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Veuillez indiquer un email valide."
+                ];
+            }
+
+            $user = User::readOneUser($_SESSION["email"]);
+            if(!password_verify($_POST["oldPassword"], $user->password)) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "L'ancien mot de passe indiqué n'est pas correct."
+                ]; 
+            }
+
+            $uppercase = preg_match('@[A-Z]@', $_POST["newPassword"]);
+            $lowercase = preg_match('@[a-z]@', $_POST["newPassword"]);
+            $number = preg_match('@[0-9]@', $_POST["newPassword"]);
+            if (!isset($_POST["newPassword"]) || !$uppercase || !$lowercase || !$number || strlen($_POST["newPassword"]) < 8) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Votre mot de passe n'est pas valide. Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule et un chiffre."
+                ];
+            }
+            if (!isset($_POST["passwordCheck"]) || ($_POST["passwordCheck"] != $_POST["newPassword"])) {
+                $messages[] = [
+                    "success" => false,
+                    "text" => "Les mots de passe ne correspondent pas."
+                ];
+            }
+
+            if (count($messages) == 0) {
+                $messages[] = [
+                    "success" => true,
+                    "text" => "Vos informations confidentielles ont bien été modifiées."
+                ];
+
+                $password = password_hash($_POST["newPassword"], PASSWORD_DEFAULT);
+               
+                User::update($_SESSION["id_user"], $_SESSION["civility"], $_SESSION["surname"], $_SESSION["firstname"], $_POST["email"], $password, $_SESSION["birthDate"], $_SESSION["city"], $_SESSION["postalCode"], $_SESSION["streetName"], $_SESSION["picture"]);
+            }
+        }
+        return $messages;
+    }
+
 }

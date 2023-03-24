@@ -25,26 +25,22 @@ if(count($messages) > 0) {
 
             <div class="row g-3 m-3 justify-content-center">
                 <div class="col-sm-6 col-lg-4">
-                    <label for="civility" class="form-label">Civilité : </label>
-                    <input type="text" class="form-control" name="civility" id="civility" value="<?= $user->civility ?>" aria-describedby="nameHelp" disabled>
-                </div>
-            </div>
-
-            <div class="row g-3 m-3 justify-content-center">
-                <div class="col-sm-6 col-lg-4">
                     <label for="surname" class="form-label">Nom : </label>
                     <input type="text" class="form-control" name="surname" id="surname" value="<?= $user->surname ?>" aria-describedby="nameHelp" required>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <label for="firstname" class="form-label">Prénom :</label>
-                    <input type="text" class="form-control" name="firstname" id="firstname" value="<?= $user->firstname ?>" aria-describedby="nameHelp" disabled>
+                    <input type="text" class="form-control" name="firstname" id="firstname" value="<?= $user->firstname ?>" aria-describedby="nameHelp" required>
                 </div>
             </div>
 
             <div class="row g-3 m-3 justify-content-center">
                 <div class="col-sm-6 col-lg-4">
-                    <label for="email" class="form-label">Email :</label>
-                    <input type="email" class="form-control" id="email" value="<?= $user->email ?>" aria-describedby="emailHelp" name="email">
+                <label for="civility">Sélectionnez votre civilité : </label>
+                    <select name="civility" id="civility" class="form-control" required>
+                        <option value="Monsieur" <?= ($user->civility == "Monsieur" ? "selected" : "") ?>>Monsieur</option>
+                        <option value="Madame" <?= ($user->civility == "Madame" ? "selected" : "") ?>>Madame</option>
+                    </select>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <label for="birthDate" class="form-label">Date de naissance :</label>

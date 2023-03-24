@@ -146,4 +146,16 @@ class Donation {
         $statement->execute();
     }
 
+    public static function delete(int $id_donation): void {
+
+        global $pdo; 
+    
+        $sql = "DELETE FROM donations
+        WHERE id_donation = :id_donation";
+
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam(":id_donation", $id_donation, PDO::PARAM_INT);
+        $statement->execute();
+    }
+
 }
