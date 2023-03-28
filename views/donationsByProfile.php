@@ -1,4 +1,4 @@
-<section>
+<section id="donationsList" style="display:none; opacity:0; transition: opacity 1.5s">
 
 <h2 id="donationsList">Liste de vos dons </h2>
 

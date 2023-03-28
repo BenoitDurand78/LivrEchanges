@@ -3,6 +3,7 @@
 session_start();
 define("TITLE", "Fiche livre");
 define("CSS", "ficheLivre");
+define("SCRIPT", "DonationFormAndDonorsList");
 
 require_once(__DIR__ . "/controllers/bookController.php");
 $bookController = new BookController;

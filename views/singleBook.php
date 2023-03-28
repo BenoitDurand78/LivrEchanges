@@ -34,11 +34,11 @@ if(count($messages) > 0) {
 
 <div class="donation">
     <div class="donationIntro">
-        <p>Vous possédez ce livre et souhaitez le donner?</p>
-        <button class="btn btn-primary">Cliquez ici pour remplir le formulaire</button>
+        <h3>Vous possédez ce livre et souhaitez le donner?</h3>
+        <button class="btn btn-primary" id="displayFormBtn">Cliquez ici pour remplir le formulaire</button>
     </div>
-    <!-- JS pour afficher masquer formulaire -->
-    <form action="#" method="POST">
+
+    <form action="#" method="POST" id="donationForm" style="display:none; opacity:0; transition: opacity 1s">
         <div class="donationForm">
             <div class="bookCondition">
                 <label for="bookCondition">État du livre :</label>
@@ -60,4 +60,9 @@ if(count($messages) > 0) {
             <button type="submit" class="btn btn-primary" name="submit">Me mettre sur la liste des donneurs</button>
         </div>
     </form>
+</div>
+
+<div class="donorsListBtn">
+    <h3>Vous êtes intéressé(e) par ce livre ?</h3>
+    <button type="submit" class="btn btn-primary" name="submit" id="donorsListBtn">Afficher la liste des donneurs</button>
 </div>

@@ -39,7 +39,7 @@ class Donation {
         global $pdo;
         $id_book = $_GET["id"];
 
-        $sql = "SELECT id_user, bookCondition, donationDate, donationComment FROM donations WHERE id_book = :id_book";
+        $sql = "SELECT id_donation, id_user, bookCondition, donationDate, donationComment FROM donations WHERE id_book = :id_book";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(":id_book", $id_book, PDO::PARAM_INT);
         $statement->execute();
@@ -50,7 +50,7 @@ class Donation {
         } else {
             foreach($donations as $donation) {
                 $id_user = $donation->id_user; 
-                $usersSQL = "SELECT id_user, firstname, city, postalCode, picture FROM users WHERE id_user = :id_user";
+                $usersSQL = "SELECT id_user, firstname, surname, city, postalCode, picture FROM users WHERE id_user = :id_user";
                 $statement = $pdo->prepare($usersSQL);
                 $statement->bindParam(":id_user", $id_user, PDO::PARAM_INT);
                 $statement->execute();
@@ -91,7 +91,15 @@ class Donation {
         }
     }
 
-
+    
+    /**
+     * readOne
+     * 
+     * Reads and display one donation, gets info about the book donated and the user donating 
+     *
+     * @param  int $id_donation the id of the donation
+     * @return Donation|false
+     */
     public static function readOne(int $id_donation): Donation|false {
 
         global $pdo;
@@ -114,6 +122,15 @@ class Donation {
             $statement->setFetchMode(PDO::FETCH_CLASS, "Book");
             $book = $statement->fetch();
             $donation->book = $book; 
+
+            $id_user = $donation->id_user;
+            $userSQL = "SELECT * from users WHERE id_user = :id_user";
+            $statement = $pdo->prepare($userSQL);
+            $statement->bindParam(":id_user", $id_user, PDO::PARAM_INT);
+            $statement->execute();
+            $statement->setFetchMode(PDO::FETCH_CLASS, "User");
+            $user = $statement->fetch();
+            $donation->user = $user; 
 
             return $donation;
         }
