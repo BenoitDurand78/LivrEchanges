@@ -32,7 +32,7 @@ if(count($messages) > 0) {
 
         <div>
             <label for="message">Votre message :</label>
-            <textarea id="message" name="message" rows="7" cols="50">Inscrivez votre message ici...</textarea>
+            <textarea id="message" name="message" rows="7" cols="50" placeholder="Inscrivez votre message ici..."></textarea>
         </div>
 
         <div class="col-12 mx-auto text-center updateButton">

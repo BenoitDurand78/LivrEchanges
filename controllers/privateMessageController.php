@@ -37,5 +37,16 @@ class PrivateMessageController {
         return $messages;
     }
 
+    // Voir pour vérifier qu'il y a bien un message, sinon renvoyer un message echo/autre
+    public function readAllReceivedValidate(): array|false {
+        $messagesReceived = PrivateMessage::readAllReceived();
+        return $messagesReceived; 
+    }
+
+    // Voir pour vérifier qu'il y a bien un message, sinon renvoyer un message echo/autre
+    public function readAllSentValidate(): array|false {
+        $messagesSent = PrivateMessage::readAllSent();
+        return $messagesSent; 
+    }
 
 }
