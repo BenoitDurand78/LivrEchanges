@@ -206,7 +206,7 @@ class UsersController
     public function verifyLogin(): void {
         if(!isset($_SESSION["id_user"])) {
             $_SESSION["message"] = "Merci de vous connecter pour accéder à cette page.";
-            header("Location: /connection.php");
+            header("Location: /connexion.php");
         }
     }
 

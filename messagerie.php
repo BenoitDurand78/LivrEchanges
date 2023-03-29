@@ -8,8 +8,9 @@ require_once(__DIR__ . "/controllers/usersController.php");
 $usersController = new UsersController;
 $usersController->verifyLogin();
 
-
-
+require_once(__DIR__ . "/controllers/privateMessageController.php");
+$privateMessageController = new PrivateMessageController;
+$messagesReceived = $privateMessageController->readAllReceivedValidate();
 
 
 

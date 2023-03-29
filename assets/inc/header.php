@@ -67,7 +67,7 @@ if(isset($_SESSION["email"])) { ?>
                 Espace personnel
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/connection.php">Connexion</a></li>
+                <li><a class="dropdown-item" href="/connexion.php">Connexion</a></li>
                 <li><a class="dropdown-item" href="/profil.php">Mon profil</a></li>
                 <li><a class="dropdown-item" href="/profil.php#donationsList">Mes dons en cours</a></li>
                 <li>

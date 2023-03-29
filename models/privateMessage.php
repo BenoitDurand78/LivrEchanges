@@ -25,7 +25,7 @@ class PrivateMessage {
         $statement->execute();
     }
 
-    public static function readAllReceived(): array {
+    public static function readAllReceived(): array|false {
         global $pdo;
         $id_destinataire = $_SESSION["id_user"];
 
@@ -36,9 +36,22 @@ class PrivateMessage {
         $statement->setFetchMode(PDO::FETCH_CLASS, "PrivateMessage");
         $messagesReceived = $statement->fetchAll();
 
-        return $messagesReceived;
-    }
+        if($messagesReceived == false) {
+            return false;
+        } else {
 
+            $id_user = $messagesReceived->id_author;
+            $userSQL = "SELECT * from users WHERE id_user = :id_user";
+            $statement = $pdo->prepare($userSQL);
+            $statement->bindParam(":id_user", $id_user, PDO::PARAM_INT);
+            $statement->execute();
+            $statement->setFetchMode(PDO::FETCH_CLASS, "User");
+            $user = $statement->fetch();
+            $messagesReceived->user = $user;
+
+        return $messagesReceived;
+        }
+    }
 
     public static function readAllSent(): array {
         global $pdo;

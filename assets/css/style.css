@@ -27,6 +27,11 @@ nav {
     font-size: 1.1em;
 }
 
+/* .navbar {
+    --offset 
+    position: fixed;
+} */
+
 .navbar-nav > li{
     margin-left: 60px;
     margin-right: 60px;
@@ -47,7 +52,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-top: 70px;
+    margin: 70px auto 40px auto;
 }
 
 #logoFooter {
