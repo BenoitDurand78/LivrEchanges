@@ -1,20 +1,23 @@
 <?php
 
 session_start();
-define("TITLE", "Message");
-define("CSS", "messagerie");
+define("TITLE", "Envoyer un message");
+define("CSS", "message");
 
 require_once(__DIR__ . "/controllers/usersController.php");
 $usersController = new UsersController;
 $usersController->verifyLogin();
 
+require_once(__DIR__ . "/controllers/donationController.php");
+$donationController = new DonationController;
+$donation = $donationController->readOneValidate();
+
 require_once(__DIR__ . "/controllers/privateMessageController.php");
 $privateMessageController = new PrivateMessageController;
-$singleMessage = $privateMessageController->readOneValidate();
 
-$messages = $privateMessageController->createFromMessageValidate();
+$messages = $privateMessageController->createValidate();
 
 include(__DIR__ . "/assets/inc/header.php"); 
-include(__DIR__ . "/views/singleMessage.php");
+include(__DIR__ . "/views/newMessage.php");
 include(__DIR__ . "/assets/inc/top.php"); 
 include(__DIR__ . "/assets/inc/footer.php");

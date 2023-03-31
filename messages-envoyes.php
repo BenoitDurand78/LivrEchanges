@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-define("TITLE", "Message");
+define("TITLE", "Messages envoyés");
 define("CSS", "messagerie");
 
 require_once(__DIR__ . "/controllers/usersController.php");
@@ -10,11 +10,11 @@ $usersController->verifyLogin();
 
 require_once(__DIR__ . "/controllers/privateMessageController.php");
 $privateMessageController = new PrivateMessageController;
-$singleMessage = $privateMessageController->readOneValidate();
+$messagesSent = $privateMessageController->readAllSentValidate();
 
-$messages = $privateMessageController->createFromMessageValidate();
+
 
 include(__DIR__ . "/assets/inc/header.php"); 
-include(__DIR__ . "/views/singleMessage.php");
+include(__DIR__ . "/views/messagesSent.php");
 include(__DIR__ . "/assets/inc/top.php"); 
 include(__DIR__ . "/assets/inc/footer.php");

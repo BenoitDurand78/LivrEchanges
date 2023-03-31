@@ -73,7 +73,7 @@ if(isset($_SESSION["email"])) { ?>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Messagerie</a></li>
+                <li><a class="dropdown-item" href="/messagerie.php">Messagerie</a></li>
               </ul>
             </li>
             <li class="nav-item">

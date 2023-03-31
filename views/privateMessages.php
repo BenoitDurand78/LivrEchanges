@@ -1,7 +1,6 @@
 <h2>Messagerie</h2>
 
-<!-- Mettre boutons pour switcher de boite de réception à messages envoyés -->
-
+<a class="card-text" href="/../messages-envoyes.php"><button class="btn">Messages envoyés</button></a>
 
 <?php
 
@@ -9,16 +8,16 @@ if(!$messagesReceived) {
     ?> <p>Aucun message reçu.</p> <?php
 } 
 else{
-    foreach($messagesReceived as $messagereceived) { ?>
+    foreach($messagesReceived as $messageReceived) { ?>
 
-<div class="col-sm-6 col-md-4 p-3">
-        <div class="card" style="width: 22rem;">
+<div class="col-12 p-3">
+        <div class="card">
             <div class="card-body">
-                <p class="card-text">AUTEUR</p>
-                <p class="card-text">SUJET DU MESSAGE</p>
-                <p class="card-text">DATE ET HEURE RECEPTION MESSAGE</p>
-                <p class="card-text">DEBUT CONTENU MESSAGE</p>
-                <a class="card-text" href="/../fiche-livre.php?id=<?= $book->id_book ?>"><button class="btn">Aperçu du message</button></a>
+                <p class="card-text">De : <?= $messageReceived->author->firstname ?></p>
+                <p class="card-text">Objet : <?= $messageReceived->messageSubject ?></p>
+                <p class="card-text">Date et heure de réception : <?= $messageReceived->date ?></p>
+                <p class="card-text"><?= $messageReceived->message ?></p>
+                <a class="card-text" href="/../message.php?id_message=<?= $messageReceived->id_message ?>"><button class="btn">Voir le message</button></a>
             </div>
         </div>
     </div>

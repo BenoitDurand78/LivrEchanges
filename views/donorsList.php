@@ -72,7 +72,7 @@ if($donations == [])  {
                         <p class="card-text">Offre publiée le <?= $donation->displayDate() ?></p>
                         <p class="card-text">Ville d'habitation : <?= $donation->user->city ?> (<?= $donation->user->postalCode ?>)</p>
                         <p class="card-text">Commentaire additionnel : <?= $donation->donationComment ?></p>
-                        <a class="card-text" href="/../message.php?id_donation=<?= $donation->id_donation ?>"><button class="btn">Contacter la personne</button></a>
+                        <a class="card-text" href="/../nouveau-message.php?id_donation=<?= $donation->id_donation ?>"><button class="btn">Contacter la personne</button></a>
                     </div>
                 </div>
             </div>
