@@ -4,6 +4,12 @@ h2 {
     font-weight: bold;
 }
 
+.loginVerify {
+    margin: 2em 30%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 .addBook {
     width: 75%;
     margin: auto;

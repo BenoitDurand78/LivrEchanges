@@ -14,12 +14,32 @@ class Donation {
     public ?User $user;
     public ?Book $book;
 
+        
+    /**
+     * displayDate 
+     * 
+     * changes the format of the date of the donation 
+     *
+     * @return string
+     */
     public function displayDate(): string {
         $donationDate = new DateTime($this->donationDate);
         return $donationDate->format("d/m/Y");
     }
 
-
+    
+    /**
+     * create
+     * 
+     * creates a donation after submitting the form on the singleBook page
+     *
+     * @param  string $bookCondition the condition of the book, between four possible choices
+     * @param  string $donationDate the date of the donation, automatically set after submitting the donation form
+     * @param  string $donationComment the additional message the donation added by the user 
+     * @param  int $id_user the id of the user who makes the donation
+     * @param  int $id_book the id of the book donated
+     * @return void
+     */
     public static function create(string $bookCondition, string $donationDate, string $donationComment, int $id_user, int $id_book) {
         global $pdo; 
 
@@ -34,7 +54,15 @@ class Donation {
         $statement->execute();
     }
 
-
+    
+    /**
+     * readByBook
+     * 
+     * returns a list of all the donations for a single book
+     *
+     * @param  int $id the id of the book
+     * @return array
+     */
     public static function readByBook(int $id): array|false {
         global $pdo;
         $id_book = $_GET["id"];
@@ -63,6 +91,7 @@ class Donation {
         }
     }
 
+    
     public static function readByProfile(): array|false {
         global $pdo;
         $id_user = $_SESSION["id_user"];

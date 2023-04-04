@@ -58,7 +58,7 @@ class PrivateMessage {
         }
     }
 
-    public static function readAllSent(): array {
+    public static function readAllSent(): array|false {
         global $pdo;
         $id_author = $_SESSION["id_user"];
 

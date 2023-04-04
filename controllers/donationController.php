@@ -3,7 +3,14 @@
 require_once(__DIR__ . "/../models/donation.php");
 
 class DonationController {
-
+    
+    /**
+     * createValidate
+     * 
+     * Control the entries submitted by the user and calls the method Donation::create
+     *
+     * @return array
+     */
     public function createValidate(): array {
 
 

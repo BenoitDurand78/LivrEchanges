@@ -38,7 +38,11 @@ if(count($messages) > 0) {
         <button class="btn btn-primary" id="displayFormBtn">Cliquez ici pour remplir le formulaire</button>
     </div>
 
-    <form action="#" method="POST" id="donationForm" style="display:none; opacity:0; transition: opacity 1s">
+    <div id="donationForm" style="display:none; opacity:0; transition: opacity 1s">
+    <?php
+
+    if(isset($_SESSION["id_user"])){ ?>
+        <form action="#" method="POST" >
         <div class="donationForm">
             <div class="bookCondition">
                 <label for="bookCondition">État du livre :</label>
@@ -59,7 +63,13 @@ if(count($messages) > 0) {
         <div class="donationSubmit">
             <button type="submit" class="btn btn-primary" name="submit">Me mettre sur la liste des donneurs</button>
         </div>
-    </form>
+    </form> <?php
+    } else {
+        ?> <p class="verifyLogin">Vous devez être connecté pour afficher le formulaire. Rendez-vous à la page de connexion <a href="/connexion.php">ici</a>.</p>
+        <?php 
+    }
+       ?>
+    </div>
 </div>
 
 <div class="donorsListBtn">
