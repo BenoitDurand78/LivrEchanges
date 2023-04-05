@@ -72,7 +72,3 @@ if(count($messages) > 0) {
     </div>
 </div>
 
-<div class="donorsListBtn">
-    <h3>Vous êtes intéressé(e) par ce livre ?</h3>
-    <button type="submit" class="btn btn-primary" name="submit" id="donorsListBtn">Afficher la liste des donneurs</button>
-</div>

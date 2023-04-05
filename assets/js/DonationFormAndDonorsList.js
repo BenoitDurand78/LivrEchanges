@@ -16,14 +16,14 @@ displayFormBtn.addEventListener("click", displayForm);
 
 // Bouton afficher liste des donneurs
 
-const donorsList = document.getElementById("donorsList"); 
+// const donorsList = document.getElementById("donorsList"); 
 
-function displayDonorsList() {
-    donorsList.style.display = "block";
-    setTimeout(function(){
-        donorsList.style.opacity = "1";
-    }, 10)
-}
+// function displayDonorsList() {
+//     donorsList.style.display = "block";
+//     setTimeout(function(){
+//         donorsList.style.opacity = "1";
+//     }, 10)
+// }
 
-const donorsListBtn = document.getElementById("donorsListBtn");
-donorsListBtn.addEventListener("click", displayDonorsList); 
+// const donorsListBtn = document.getElementById("donorsListBtn");
+// donorsListBtn.addEventListener("click", displayDonorsList); 

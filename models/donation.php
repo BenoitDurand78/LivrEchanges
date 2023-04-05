@@ -61,7 +61,7 @@ class Donation {
      * returns a list of all the donations for a single book
      *
      * @param  int $id the id of the book
-     * @return array
+     * @return array|false 
      */
     public static function readByBook(int $id): array|false {
         global $pdo;
@@ -91,7 +91,14 @@ class Donation {
         }
     }
 
-    
+        
+    /**
+     * readByProfile
+     * 
+     * Reads and display every donation by profile, gets info about the books donated
+     *
+     * @return array|false
+     */
     public static function readByProfile(): array|false {
         global $pdo;
         $id_user = $_SESSION["id_user"];
