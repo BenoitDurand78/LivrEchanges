@@ -29,17 +29,19 @@ blockquote {
 
 .homeTexts {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
+}
+
+.homeTextsTitles {
+    margin-bottom: 1em;
+    margin-top: 2em;
 }
 
 .explanations, .whyDonate {
-    border: 1px solid black;
-    width: 400px;
-    margin: 2%;
-    background-color: #f2dcb18c;
-    border: 3px solid #14224369;
+    width: 70%;
+    margin: auto;
 }
 
 .bookSearchForm {
@@ -84,7 +86,7 @@ blockquote {
 
 #bookResearchHome {
     width: 80%;
-    margin: auto;
+    margin: 5em auto;
 }
 
 .quickSearch {
