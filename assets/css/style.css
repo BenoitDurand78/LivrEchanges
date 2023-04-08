@@ -8,7 +8,7 @@ body {
 
 #logo {
     width: 35%;
-    min-width: 15em;
+    min-width: 250px;
     margin: auto;
 }
 
@@ -59,22 +59,26 @@ footer {
     width: 15%;
     min-width: 12em;
     margin: auto;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .footerSentence {
-    width: 50%;
+    width: 70%;
     margin: auto;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .iconsFooter {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 5%;
+    gap: 15%;
     margin-top: 2em;
+    color: #142243;
+}
+
+.bi {
     color: #142243;
 }
 

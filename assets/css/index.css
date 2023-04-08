@@ -23,6 +23,10 @@ blockquote {
     margin-bottom: 2%;
 }
 
+.imgCarousel {
+    min-height: 200px;
+}
+
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.495);
 }
@@ -50,6 +54,7 @@ blockquote {
     align-content: center;
     margin: auto;
     width: 30%;
+    min-width: 200px;
 }
 
 .search {
