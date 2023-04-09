@@ -14,6 +14,24 @@ const displayFormBtn = document.getElementById("displayFormBtn");
 displayFormBtn.addEventListener("click", displayForm);
 
 
+
+// Bouton afficher formulaire de commentaire
+
+const commentForm = document.getElementById("commentForm");
+
+function displayCommentForm() {
+    commentForm.style.display = "block";
+    setTimeout(function(){
+        commentForm.style.opacity = "1";
+    }, 10)
+
+}
+
+const displayCommentFormBtn = document.getElementById("displayCommentFormBtn");
+displayCommentFormBtn.addEventListener("click", displayCommentForm);
+
+
+
 // Bouton afficher liste des donneurs
 
 // const donorsList = document.getElementById("donorsList"); 

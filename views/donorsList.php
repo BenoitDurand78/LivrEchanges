@@ -58,9 +58,9 @@
             foreach ($donations as $donation) {
             ?>
                 <div class="col-12 m-2">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-head">
+                    <div class="card donationCard">
+                        <div class="card-body donationCardBody">
+                            <div class="card-head donationCardHead">
                                 <img class="donorPicture" src="/../assets/img/users/<?= $donation->user->picture ?>" alt="Illustration de <?= $donation->user->picture ?>">
                                 <h3 class="card-title"><?= $donation->user->firstname ?></h3>
                             </div>

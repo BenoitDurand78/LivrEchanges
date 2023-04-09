@@ -15,6 +15,21 @@ if(count($messages) > 0) {
 
 ?>
 
+<?php
+
+if(count($comments) > 0) {
+    foreach($comments as $comment) {
+        if($comment["success"]) { ?>
+            <p class="alert alert-success"><?= $comment["text"] ?></p>
+        <?php }
+        else { ?>
+            <p class="alert alert-danger"><?= $comment["text"] ?></p>
+        <?php }
+    }
+}
+
+?>
+
 <div class="bookSection">
     <div class="bookPicture">
         <img src="../assets/img/books/<?= $book->picture ?>" alt="Image d'illustration de <?= $book->title ?>">
