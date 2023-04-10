@@ -22,7 +22,7 @@ class CommentController {
 
             $comments[] = [
                 "success" => true,
-                "text" => "Votre message a bien été envoyé"
+                "text" => "Votre message a bien été envoyé."
             ];
 
             $comment = htmlspecialchars($_POST["comment"]);

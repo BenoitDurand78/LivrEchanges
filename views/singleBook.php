@@ -30,6 +30,21 @@ if(count($comments) > 0) {
 
 ?>
 
+<?php
+
+if(count($ratingsMessages) > 0) {
+    foreach($ratingsMessages as $ratingsMessage) {
+        if($ratingsMessage["success"]) { ?>
+            <p class="alert alert-success"><?= $ratingsMessage["text"] ?></p>
+        <?php }
+        else { ?>
+            <p class="alert alert-danger"><?= $ratingsMessage["text"] ?></p>
+        <?php }
+    }
+}
+
+?>
+
 <div class="bookSection">
     <div class="bookPicture">
         <img src="../assets/img/books/<?= $book->picture ?>" alt="Image d'illustration de <?= $book->title ?>">
@@ -43,6 +58,67 @@ if(count($comments) > 0) {
         <p>Numéro ISBN : <?= $book->ISBN ?></p>
         <p>Description du livre : <?= $book->description ?></p>
     </div>
+</div>
+
+<div class="rating"> 
+    <div class="ratingIntro">
+        <h3>Note des utilisateurs : </h3>
+        <?php
+            if($average == false) {
+                ?> <p>Aucune note pour ce livre n'a été donnée pour le moment.</p> <?php
+            } else {
+                ?> <p class="bookRating"><?= $average ?></p> <?php
+            } ?>
+
+        <button class="btn btn-primary" id="displayRatingFormBtn">Notez ce livre</button>
+    </div>
+    <div id="ratingForm" style="display:none; opacity:0; transition: opacity 1s">
+    <?php
+
+    if(isset($_SESSION["id_user"])){ ?>
+        <form action="#" method="POST" >
+        <div class="ratingForm">
+            <legend>Votre note :</legend>
+                <input type="radio" id="1" name="rating" value="1">
+                <label for="1">1/10</label>
+
+                <input type="radio" id="2" name="rating" value="2">
+                <label for="2">2/10</label>
+
+                <input type="radio" id="3" name="rating" value="3">
+                <label for="3">3/10</label>
+
+                <input type="radio" id="4" name="rating" value="4">
+                <label for="4">4/10</label>
+
+                <input type="radio" id="5" name="rating" value="5">
+                <label for="5">5/10</label>
+
+                <input type="radio" id="6" name="rating" value="6">
+                <label for="6">6/10</label>
+
+                <input type="radio" id="7" name="rating" value="7">
+                <label for="7">7/10</label>
+
+                <input type="radio" id="8" name="rating" value="8">
+                <label for="8">8/10</label>
+
+                <input type="radio" id="9" name="rating" value="9">
+                <label for="9">9/10</label>
+
+                <input type="radio" id="10" name="rating" value="10">
+                <label for="10">10/10</label>
+        </div>
+        <div class="submitRating">
+            <button type="submit" class="btn btn-primary" name="submitRating">Enregistrer ma note</button>
+        </div>
+    </form> <?php
+    } else {
+        ?> <p class="verifyLogin">Vous devez être connecté pour afficher le formulaire. Rendez-vous à la page de connexion <a href="/connexion.php">ici</a>.</p>
+        <?php 
+    }
+       ?>
+
 </div>
 
 <hr/>

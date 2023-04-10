@@ -32,6 +32,21 @@ displayCommentFormBtn.addEventListener("click", displayCommentForm);
 
 
 
+// Bouton afficher formulaire de notation
+
+const ratingForm = document.getElementById("ratingForm");
+
+function displayRatingForm() {
+    ratingForm.style.display = "block";
+    setTimeout(function(){
+        ratingForm.style.opacity = "1";
+    }, 10)
+
+}
+
+const displayRatingFormBtn = document.getElementById("displayRatingFormBtn");
+displayRatingFormBtn.addEventListener("click", displayRatingForm);
+
 // Bouton afficher liste des donneurs
 
 // const donorsList = document.getElementById("donorsList"); 
