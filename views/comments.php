@@ -29,7 +29,7 @@
 
 <?php 
 
-if (count($allComments) == 0) { ?>
+if ($allComments == false) { ?>
         <p>Aucun commentaire n'a été posté pour ce livre jusqu'à maintenant. Soyez le premier à le faire !</p> <?php
     } else { 
         foreach ($allComments as $comment) {

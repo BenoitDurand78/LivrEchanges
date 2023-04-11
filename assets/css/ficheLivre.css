@@ -8,7 +8,7 @@ h2 {
 h3 {
     text-align: center;
     font-size: 2em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
 }
 
 p {
@@ -30,6 +30,10 @@ p {
     width: 90%;
 }
 
+.bookPic {
+    border: #142243 1px solid;
+    box-shadow: -5px 5px 5px #142243b8;
+}
 
 .bookInfo {
     width: 60%;
@@ -50,6 +54,51 @@ p {
     color: #142243;
     font-size: 1.2em;
     border: 3px solid #142243;
+}
+
+.bookRating {
+    font-size: 3.5em;
+}
+
+.ratingIntro {
+    margin: auto;
+    text-align: center;
+}
+
+#ratingForm {
+    margin: auto;
+    text-align: center;
+}
+
+legend {
+    margin: 30px auto;
+}
+
+.ratingRadio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    width: 70%;
+    font-size: 1.2em;
+}
+
+
+.ratingForm {
+    margin: 30px auto;
+}
+
+.nbOfRatings {
+    font-size: 1.4em;
+}
+
+.submitRatingBtn {
+    margin: 20px auto;
+}
+
+.hr {
+    margin: 20px auto;
 }
 
 .donation {
@@ -141,8 +190,6 @@ p {
 } */
 
 
-/* changer cards des donneurs puis celles des commentaires (photo sur la gauche, nom, commentaire et date en colonne sur la droite, wrap) */
-
 .commentIntro {
 margin-bottom: 2em;
 }
@@ -204,3 +251,4 @@ margin-bottom: 2em;
 .commentsCardInfo {
     width: 60%;
 }
+

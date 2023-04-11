@@ -1,10 +1,9 @@
 <section class="homeTexts">
       <div class="explanations">
-        <h2 class="homeTextsTitles">Comment Livr'Échanges fonctionne</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nam aspernatur iste dolor ullam neque nesciunt
-          minima modi sunt doloremque. Velit ab, quis nostrum fugit numquam dicta tenetur corporis assumenda?
-          Veniam amet voluptates et! Iste velit doloribus delectus aut vero explicabo illum quasi qui expedita fugiat.
-          Ipsam eius dolores eaque ipsum! Reiciendis ut modi libero temporibus quis harum quam eveniet?
+        <h2 class="homeTextsTitles">Comment fonctionne Livr'Échanges</h2>
+        <p>Livr'Échanges, c'est le site par excellence pour chaque lecteur, occasionnel ou passionné !<br/>
+        
+                  
         </p>
       </div>
 
@@ -17,4 +16,4 @@
         </p>
       </div>
 
-    </section>
+</section>

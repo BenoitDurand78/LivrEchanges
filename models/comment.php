@@ -23,7 +23,7 @@ class Comment {
      */
     public function displayDate(): string {
         $date = new DateTime($this->date);
-        return $date->format("d/m/Y H:i");
+        return $date->format("d/m/Y" . " à " . "H:i");
     }
 
 

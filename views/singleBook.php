@@ -47,7 +47,7 @@ if(count($ratingsMessages) > 0) {
 
 <div class="bookSection">
     <div class="bookPicture">
-        <img src="../assets/img/books/<?= $book->picture ?>" alt="Image d'illustration de <?= $book->title ?>">
+        <img class="bookPic" src="../assets/img/books/<?= $book->picture ?>" alt="Image d'illustration de <?= $book->title ?>">
     </div>
     <div class="bookInfo">
         <h3><?= $book->title ?></h3>
@@ -64,10 +64,10 @@ if(count($ratingsMessages) > 0) {
     <div class="ratingIntro">
         <h3>Note des utilisateurs : </h3>
         <?php
-            if($average == false) {
+            if($average == null) {
                 ?> <p>Aucune note pour ce livre n'a été donnée pour le moment.</p> <?php
             } else {
-                ?> <p class="bookRating"><?= $average ?></p> <?php
+                ?> <p class="bookRating"><?= $average ?> / 10 </p><p class="nbOfRatings"><?= $nbOfRatings ?> vote(s)</p> <?php
             } ?>
 
         <button class="btn btn-primary" id="displayRatingFormBtn">Notez ce livre</button>
@@ -79,38 +79,51 @@ if(count($ratingsMessages) > 0) {
         <form action="#" method="POST" >
         <div class="ratingForm">
             <legend>Votre note :</legend>
-                <input type="radio" id="1" name="rating" value="1">
-                <label for="1">1/10</label>
-
-                <input type="radio" id="2" name="rating" value="2">
-                <label for="2">2/10</label>
-
-                <input type="radio" id="3" name="rating" value="3">
-                <label for="3">3/10</label>
-
-                <input type="radio" id="4" name="rating" value="4">
-                <label for="4">4/10</label>
-
-                <input type="radio" id="5" name="rating" value="5">
-                <label for="5">5/10</label>
-
-                <input type="radio" id="6" name="rating" value="6">
-                <label for="6">6/10</label>
-
-                <input type="radio" id="7" name="rating" value="7">
-                <label for="7">7/10</label>
-
-                <input type="radio" id="8" name="rating" value="8">
-                <label for="8">8/10</label>
-
-                <input type="radio" id="9" name="rating" value="9">
-                <label for="9">9/10</label>
-
-                <input type="radio" id="10" name="rating" value="10">
-                <label for="10">10/10</label>
+                <div class="ratingRadio">
+                    <div>
+                        <input type="radio" id="1" name="rating" value="1">
+                        <label for="1">1/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="2" name="rating" value="2">
+                        <label for="2">2/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="3" name="rating" value="3">
+                        <label for="3">3/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="4" name="rating" value="4">
+                        <label for="4">4/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="5" name="rating" value="5">
+                        <label for="5">5/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="6" name="rating" value="6">
+                        <label for="6">6/10</label>
+                        </div>
+                    <div>
+                        <input type="radio" id="7" name="rating" value="7">
+                        <label for="7">7/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="8" name="rating" value="8">
+                        <label for="8">8/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="9" name="rating" value="9">
+                        <label for="9">9/10</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="10" name="rating" value="10">
+                        <label for="10">10/10</label>
+                    </div>
+                </div>
         </div>
         <div class="submitRating">
-            <button type="submit" class="btn btn-primary" name="submitRating">Enregistrer ma note</button>
+            <button type="submit" class="btn btn-primary submitRatingBtn" name="submitRating">Enregistrer ma note</button>
         </div>
     </form> <?php
     } else {
@@ -121,7 +134,7 @@ if(count($ratingsMessages) > 0) {
 
 </div>
 
-<hr/>
+<hr class="hr" />
 
 <div class="donation">
     <div class="donationIntro">

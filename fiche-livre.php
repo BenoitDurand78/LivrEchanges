@@ -12,10 +12,8 @@ $book = $bookController->readOneValidate();
 require_once(__DIR__ . "/controllers/ratingController.php");
 $ratingController = new RatingController; 
 $ratingsMessages = $ratingController->createValidate(); 
-
-require_once(__DIR__ . "/models/rating.php");
-$ratingModel = new Rating;
-$average = $ratingModel->average($_GET["id"]);
+$average = $ratingController->averageValidate();
+$nbOfRatings = $ratingController->nbOfRatingsValidate();
 
 require_once(__DIR__ . "/controllers/donationController.php");
 $donationController = new DonationController;
