@@ -67,10 +67,23 @@ card {
     align-items: center;
 }
 
+.card-info {
+    width: 90%;
+}
+
+.bookInfo {
+    font-size: 1.1em;
+}
+
 .card-img {
     display: flex;
     justify-content: center;
     margin: 1em auto;
+} 
+
+.bookImg {
+    border: #142243 1px solid;
+    box-shadow: 5px 5px 5px #142243b8;
 }
 
 .paginationNav {
