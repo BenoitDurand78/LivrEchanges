@@ -1,15 +1,12 @@
-<h2>Liste des donneurs </h2>
-
-
-
-    <?php
+<?php
 
     if ($donations == []) {
         return false;
     } else { ?>
 
-    <div id="donorsList">
-        <div id="map"></div>
+        <h2>Liste des donneurs </h2>
+        <div id="donorsList">
+            <div id="map"></div>
 
 
         <script>

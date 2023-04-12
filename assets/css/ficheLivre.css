@@ -189,6 +189,15 @@ legend {
     text-align: center;
 } */
 
+.commentsTitle {
+    margin-bottom: 30px;
+}
+
+.noComment {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto 30px auto;
+}
 
 .commentIntro {
 margin-bottom: 2em;

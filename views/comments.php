@@ -1,5 +1,32 @@
-<h2>Commentaires </h2>
+<h2 class="commentsTitle">Commentaires </h2>
 
+<?php 
+
+if ($allComments == false) { ?>
+        <p class="noComment">Aucun commentaire n'a été posté pour ce livre jusqu'à maintenant. Soyez le premier à le faire !</p> <?php
+    } else { 
+        foreach ($allComments as $comment) {
+        ?>
+            <div class="comments">
+                <div class="col-12 m-2">
+                    <div class="card commentsCard">
+                        <div class="card-body card-comments">
+                            <div class="card-head commentsCardHead">
+                                <img class="commentPicture" src="/../assets/img/users/<?= $comment->user->picture ?>" alt="Illustration de <?= $comment->user->picture ?>">
+                                <p class="card-title"><?= $comment->user->firstname ?> a écrit : </p>
+                                <p class="card-text">le <?= $comment->displayDate() ?></p>
+                            </div>
+                            <div class="card-info commentsCardInfo">
+                                <p class="card-text"><?= $comment->comment ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
+        }
+    }
+?>
 
 <div class="comment">
     <div class="commentIntro">
@@ -26,31 +53,3 @@
        ?>
     </div>
 </div>
-
-<?php 
-
-if ($allComments == false) { ?>
-        <p>Aucun commentaire n'a été posté pour ce livre jusqu'à maintenant. Soyez le premier à le faire !</p> <?php
-    } else { 
-        foreach ($allComments as $comment) {
-        ?>
-            <div class="comments">
-                <div class="col-12 m-2">
-                    <div class="card commentsCard">
-                        <div class="card-body card-comments">
-                            <div class="card-head commentsCardHead">
-                                <img class="commentPicture" src="/../assets/img/users/<?= $comment->user->picture ?>" alt="Illustration de <?= $comment->user->picture ?>">
-                                <p class="card-title"><?= $comment->user->firstname ?> a écrit : </p>
-                                <p class="card-text">le <?= $comment->displayDate() ?></p>
-                            </div>
-                            <div class="card-info commentsCardInfo">
-                                <p class="card-text"><?= $comment->comment ?></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php
-        }
-    }
-?>
