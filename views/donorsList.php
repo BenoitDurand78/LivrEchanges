@@ -4,7 +4,7 @@
         return false;
     } else { ?>
 
-        <h2>Liste des donneurs </h2>
+        <h3>Liste des donneurs </h3>
         <div id="donorsList">
             <div id="map"></div>
 
@@ -78,3 +78,5 @@
         </aside>
 
     </div>
+
+    <hr class="hr" />

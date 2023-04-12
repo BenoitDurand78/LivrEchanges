@@ -1,4 +1,30 @@
-<h2 class="commentsTitle">Commentaires </h2>
+<h3 class="commentsTitle">Commentaires </h3>
+
+<div class="comment">
+    <div class="commentIntro">
+        <button class="btn btn-primary" id="displayCommentFormBtn">Cliquez ici pour laisser un commentaire</button>
+    </div>
+
+    <div id="commentForm" style="display:none; opacity:0; transition: opacity 1s">
+    <?php
+
+    if(isset($_SESSION["id_user"])){ ?>
+        <form action="#" method="POST" >
+        <div class="commentForm">
+            <label for="comment" class="commentLabel">Ecrivez ici votre commentaire : </label>
+            <textarea id="comment" name="comment" rows="5" cols="40"></textarea>    
+        </div>
+        <div class="submitComment">
+            <button type="submit" class="btn btn-primary" name="submitComment">Poster le commentaire</button>
+        </div>
+    </form> <?php
+    } else {
+        ?> <p class="verifyLogin">Vous devez être connecté pour laisser un commentaire. Rendez-vous à la page de connexion <a href="/connexion.php">ici</a>.</p>
+        <?php 
+    }
+       ?>
+    </div>
+</div>
 
 <?php 
 
@@ -13,8 +39,8 @@ if ($allComments == false) { ?>
                         <div class="card-body card-comments">
                             <div class="card-head commentsCardHead">
                                 <img class="commentPicture" src="/../assets/img/users/<?= $comment->user->picture ?>" alt="Illustration de <?= $comment->user->picture ?>">
-                                <p class="card-title"><?= $comment->user->firstname ?> a écrit : </p>
-                                <p class="card-text">le <?= $comment->displayDate() ?></p>
+                                <p class="card-title"><?= $comment->user->firstname ?> a écrit, le <?= $comment->displayDate() ?> : </p>
+                                
                             </div>
                             <div class="card-info commentsCardInfo">
                                 <p class="card-text"><?= $comment->comment ?></p>
@@ -27,29 +53,3 @@ if ($allComments == false) { ?>
         }
     }
 ?>
-
-<div class="comment">
-    <div class="commentIntro">
-        <button class="btn btn-primary" id="displayCommentFormBtn">Cliquez ici pour laisser un commentaire</button>
-    </div>
-
-    <div id="commentForm" style="display:none; opacity:0; transition: opacity 1s">
-    <?php
-
-    if(isset($_SESSION["id_user"])){ ?>
-        <form action="#" method="POST" >
-        <div class="commentForm">
-            <label for="comment">Ecrivez ici votre commentaire : </label>
-            <textarea id="comment" name="comment" rows="5" cols="40"></textarea>    
-        </div>
-        <div class="submitComment">
-            <button type="submit" class="btn btn-primary" name="submitComment">Poster le commentaire</button>
-        </div>
-    </form> <?php
-    } else {
-        ?> <p class="verifyLogin">Vous devez être connecté pour laisser un commentaire. Rendez-vous à la page de connexion <a href="/connexion.php">ici</a>.</p>
-        <?php 
-    }
-       ?>
-    </div>
-</div>

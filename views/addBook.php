@@ -95,7 +95,7 @@ if(isset($_SESSION["id_user"])){ ?>
         <textarea id="description" name="description" rows="5" cols="33"><?= (isset($_POST["description"]) ? ($_POST["description"]) : "") ?></textarea>
     </div>
 
-        <div class="col-6 mx-auto g-5 text-center">
+        <div class="col-12 mx-auto g-5 text-center submitNewBook">
             <input type="submit" value="Créer la fiche livre" class="btn btn-primary form_sub" name="submit">
         </div>
 

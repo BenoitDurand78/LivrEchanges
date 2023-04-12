@@ -17,11 +17,6 @@
             <p><?= $user->city ?></p>
         </div>
     </div>
-
-    <div class="description">
-        <i class="bi bi-info-circle-fill" style="font-size: 60px;"></i>
-        <p class="descriptionText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi provident deleniti perspiciatis laboriosam animi. Exercitationem culpa natus incidunt possimus quisquam cumque dicta explicabo deserunt reiciendis. Explicabo amet distinctio ab quod.</p>
-    </div>
     
     <div id="buttonsProfile">
         <a class="card-text" href="/../modifier-profil.php/"><button class="btn">Modifier votre informations personnelles</button></a>

@@ -7,6 +7,7 @@
 
             <label for="password"><i class="bi bi-lock" style="font-size: 50px;"></i></label>
             <input type="password" id="password" name="password" minlength="8" placeholder="Mot de passe" required>
+            <p>Mot de passe oublié? Cliquez <a href="#">ici</a> pour le réinitialiser.</p>
 
             <button type="submit" class="btn btn-primary" name="submit">Connexion</button>
     </form>
