@@ -7,6 +7,14 @@ blockquote {
     color: rgb(20, 34, 67);
 }
 
+h2 {
+    font-size: 2.3em;
+}
+
+.explanations > p, .whyDonate > p {
+    font-size: 1.1em;
+}
+
 #quotation {
     font-size: 1.2em;
     font-weight: bold;
@@ -20,7 +28,6 @@ blockquote {
 .carousel {
     width: 100%;
     margin: auto;
-    margin-bottom: 2%;
 }
 
 .imgCarousel {
@@ -40,7 +47,7 @@ blockquote {
 
 .homeTextsTitles {
     margin-bottom: 1em;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .explanations, .whyDonate {
