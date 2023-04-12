@@ -4,7 +4,7 @@
 <hr/>
 
   <img src="../assets/logo4_1.png" alt="logo Livr'Échanges" id="logoFooter">
-  <p class="footerSentence">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse perferendis vitae libero numquam at. Animi quasi quo minus labore quam qui nobis?</p>
+  <p class="footerSentence">Retrouvez nous sur... </p>
   <div class="iconsFooter">
     <a href="#" class="bi bi-facebook" style="font-size: 40px"></a>
     <a href="#" class="bi bi-instagram" style="font-size: 40px"></a>

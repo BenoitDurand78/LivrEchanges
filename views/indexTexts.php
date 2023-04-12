@@ -11,7 +11,11 @@
 
   <div class="whyDonate">
     <h2 class="homeTextsTitles">Pourquoi donner vos livres</h2>
-    <p></p>
+    <p>Trop souvent au moment de chercher un nouveau livre nous avons le réflexe d'acheter, parfois en ligne, ce livre neuf, plutôt que de chercher à l'avoir par d'autres moyens.</p>
+    <p>Ce livre sera éventuellement lu une seule fois, restera dans un coin et finira par être jeté bien plus tard, l'effort pour essayer de le revendre pouvant paraître bien conséquent pour le retour espéré. Cela constitue une quantité incroyable de papier pour une ou deux lectures. Le premier intérêt de donner nos livres une fois lus est écologique, un livre qui passe de main en main, c'est avant tout moins d'arbres sciés, moins de produits chimiques utilisés et globalement un impact climatique limité.</p>
+    <p>Même si le prix de certains livres n'est pas élevé, pouvoir faire des économies reste toujours intéressant  ! Ces économies feront des heureux, et chaque donneur le sait : un sourire et des remerciements valent bien mieux que d'avoir un livre à la poubelle.</p>
+    <p>Enfin, ce n'est pas toujours uniquement un don, c'est parfois une vraie rencontre qui se fait quand un livre se transmet. Livr'Échanges permet de créer du lien sur et en dehors du site, de se créer une communauté avec la lecture comme intérêt commun.</p>
   </div>
-  
+
+
 </section>

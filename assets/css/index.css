@@ -51,7 +51,7 @@ h2 {
 }
 
 .explanations, .whyDonate {
-    width: 70%;
+    width: 80%;
     margin: auto;
 }
 
@@ -61,7 +61,7 @@ h2 {
     align-content: center;
     margin: auto;
     width: 30%;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 .search {

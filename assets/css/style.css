@@ -59,14 +59,15 @@ footer {
     width: 15%;
     min-width: 12em;
     margin: auto;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .footerSentence {
     width: 70%;
     margin: auto;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
+    color: #142243
 }
 
 .iconsFooter {

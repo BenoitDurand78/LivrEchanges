@@ -16,7 +16,7 @@
     foreach($books as $book) {
     ?>
     <div class="col-sm-6 col-md-4 p-3">
-        <div class="card" style="width: 22rem;">
+        <div class="card">
             <div class="card-body">
                 <div class="card-img">
                     <img src="/../assets/img/books/<?= $book->picture ?>" alt="Illustration de <?= $book->title ?>" class="bookImg">
@@ -26,7 +26,9 @@
                     <p class="card-text bookInfo">écrit par <?= $book->author?></p>
                     <p class="card-text bookInfo">publié en <?= $book->releaseYear ?></p>
                     <p class="card-text bookInfo"><?= $book->category ?></p>
-                    <a class="card-text" href="/../fiche-livre.php?id=<?= $book->id_book ?>"><button class="btn">Consulter la fiche de ce livre</button></a>
+                    <div class="singleBookBtn">
+                        <a class="card-text" href="/../fiche-livre.php?id=<?= $book->id_book ?>"><button class="btn">Consulter la fiche de ce livre</button></a>
+                    </div>
                 </div>
             </div>
         </div>

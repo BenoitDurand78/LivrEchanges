@@ -7,31 +7,31 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="6500">
-            <img src="/assets/carroussel5-4.webp" class="d-block w-100 imgCarousel" alt="texte alternatif 1">
+            <img src="/assets/carroussel9-1.jpg" class="d-block w-100 imgCarousel" alt="texte alternatif 1">
             <div class="carousel-caption d-none d-md-block">
-                <h2>First slide label</h2>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h2>L'industrie du papier en chiffres</h2>
+                <p>Combien de tonnes de papier sont utilisées chaque année pour imprimer des livres?</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="6500">
-            <img src="/assets/carroussel6-3.jpg" class="d-block w-100 imgCarousel" alt="texte alternatif 2">
+            <img src="/assets/carroussel7-2.jpg" class="d-block w-100 imgCarousel" alt="texte alternatif 2">
             <div class="carousel-caption d-none d-md-block">
-                <h2>Second slide label</h2>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h2>Les plus belles bibliothèques dans le monde</h2>
+                <p>Venez découvrir quelques-unes des plus belles bibliothèques de la planète !</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="6500">
-            <img src="/assets/carroussel7-2.jpg" class="d-block w-100 imgCarousel" alt="texte alternatif 3">
+            <img src="/assets/carroussel6-3.jpg" class="d-block w-100 imgCarousel" alt="texte alternatif 3">
             <div class="carousel-caption d-none d-md-block">
-                <h2>Third slide label</h2>
-                <p>Some representative placeholder content for the third slide.</p>
+                <h2>Lecture et sommeil</h2>
+                <p>Petite liste des livres qui aident à s'endormir.</p>
             </div>
         </div>
         <div class="carousel-item" data-bs-interval="6500">
-            <img src="/assets/carroussel9-1.jpg" class="d-block w-100 imgCarousel" alt="texte alternatif 4">
+            <img src="/assets/carroussel5-4.webp" class="d-block w-100 imgCarousel" alt="texte alternatif 4">
             <div class="carousel-caption d-none d-md-block">
-                <h2>Fourth slide label</h2>
-                <p>Some representative placeholder content for the fourth slide.</p>
+                <h2>Comparatif des liseuses</h2>
+                <p>Voici notre comparatif des liseuses (même si les livres restent quand-même mieux).</p>
             </div>
         </div>
     </div>

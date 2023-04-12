@@ -31,6 +31,7 @@ input {
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    max-width: 350px;
 }
 
 .btn {
@@ -86,7 +87,7 @@ card {
     box-shadow: 5px 5px 5px #142243b8;
 }
 
-.paginationNav {
+.pagination {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -94,6 +95,7 @@ card {
     line-height: 1.5em;
     color: #142243;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .page-link, .page-item {
@@ -112,4 +114,33 @@ card {
     color: white;
     background-color: #142243;
     border-color: #142243;
+}
+
+.singleBookBtn {
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .card-img > img {
+        width: 120px;
+        margin: auto;
+        min-height: 194px;
+    }
+
+    .bookInfo {
+        font-size: 1em;
+    }
+
+    .btn {
+        background-color: #142243;
+        color: white;
+        font-size: 1em;
+        border: 3px solid #142243;
+        min-height: 30px;
+        transition-duration: 0.3s;
+    }
+
+    
+
+
 }
