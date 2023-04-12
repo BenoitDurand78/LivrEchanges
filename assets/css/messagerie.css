@@ -24,11 +24,21 @@ h2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.sentMessagesBtn, .receivedMessagesBtn {
+    text-align: center;
+    margin: 20px;
 }
 
 .card {
-    width: 80%;
+    width: 100%;
+}
+
+.message {
+    margin: auto;
 }
 
 .card-body {

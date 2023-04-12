@@ -1,7 +1,11 @@
 <h2>Messages envoyés</h2>
 
-<section class="messages">
+<div class="receivedMessagesBtn">
     <a class="card-text" href="/../messagerie.php"><button class="btn">Boîte de réception</button></a>
+</div>
+
+<section class="messages">
+    
 
     <?php
 
@@ -11,7 +15,7 @@
     else{
         foreach($messagesSent as $messageSent) { ?>
 
-    <div class="col-10 p-3">
+    <div class="col-10 p-3 message">
             <div class="card">
                 <div class="card-body">
                     <p class="card-text">A : <br/><?= $messageSent->destinataire->firstname ?></p>

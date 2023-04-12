@@ -30,7 +30,7 @@ if(count($messages) > 0) {
             <input type="text" class="form-control" id="messageSubject" value="<?= $donation->book->title ?>" name="messageSubject" disabled>
         </div>
 
-        <div>
+        <div class="message">
             <label for="message">Votre message :</label>
             <textarea id="message" name="message" rows="7" cols="50" placeholder="Inscrivez votre message ici..."></textarea>
         </div>
