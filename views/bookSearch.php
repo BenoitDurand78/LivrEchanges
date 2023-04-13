@@ -39,24 +39,28 @@
 
 </div>
 
+<?php
+    if(!isset($_GET["bookSearch"])) { ?>
 
-<nav class="paginationNav">
-    <ul class="pagination">
+        <nav class="paginationNav">
+            <ul class="pagination">
 
-        <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-            <a href="/recherche.php?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
-        </li>
-        <?php for($page = 1; $page <= $pages; $page++): ?>
+                <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                    <a href="/recherche.php?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
+                </li>
+                <?php for($page = 1; $page <= $pages; $page++): ?>
 
-            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                <a href="/recherche.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-            </li>
-        <?php endfor ?>
+                    <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                        <a href="/recherche.php?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+                    </li>
+                <?php endfor ?>
 
-            <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-            <a href="/recherche.php?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
-        </li>
-    </ul>
-</nav>
+                    <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+                    <a href="/recherche.php?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
+                </li>
+            </ul>
+        </nav>
+        <?php 
+    } ?>
 
 </section>

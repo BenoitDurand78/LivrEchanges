@@ -13,7 +13,17 @@ class PrivateMessage {
     public User $destinataire;
     public User $author;
 
-
+    /**
+     * displayDate 
+     * 
+     * changes the format of the date of the donation 
+     *
+     * @return string
+     */
+    public function displayDate(): string {
+        $date = new DateTime($this->date);
+        return $date->format("d/m/Y" . " à " . "H:i");
+    }
 
     public static function create(string $messageSubject, string $message, int $id_destinataire, int $id_author) {
         global $pdo;

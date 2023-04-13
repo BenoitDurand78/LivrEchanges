@@ -8,6 +8,7 @@
     <p>A : <?= $singleMessage->destinataire->firstname ?></p>
     <p>Message de : <?= $singleMessage->author->firstname ?></p>
     <p>Sujet du message : <?= $singleMessage->messageSubject ?></p>
+    <p>Date et heure : <br/><?= $singleMessage->displayDate() ?></p>
     <p>Contenu du message :<br/> <?= $singleMessage->message ?></p>
 </div>
 
