@@ -4,6 +4,13 @@ h2 {
     margin-top: 1em;
 }
 
+
+.answerTitle {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 2em;
+}
+
 .btn{
     background-color: #142243;
     color: white;
@@ -28,7 +35,7 @@ h2 {
     align-items: center;
 }
 
-.sentMessagesBtn, .receivedMessagesBtn {
+.sentMessagesBtn, .receivedMessagesBtn, .backToMessagesBtn {
     text-align: center;
     margin: 20px;
 }
@@ -54,4 +61,21 @@ h2 {
 .card-text {
     text-align: center;
     margin: auto;
+}
+
+.messageInfo {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.answerMessage {
+    width: 60%;
+}
+
+.answerTextarea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
