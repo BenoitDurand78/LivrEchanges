@@ -26,3 +26,12 @@ textarea {
     font-size: 1.2em;
     border: 3px solid #142243;
 }
+
+
+@media (max-width: 576px) {
+
+    .contact {
+        width: 90%;
+    }
+
+}

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-define("TITLE", "Ajout d'un livre");
+define("TITLE", "Recherche de livre");
 define("CSS", "bookSearch");
 
 

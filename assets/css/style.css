@@ -79,6 +79,11 @@ footer {
     color: #142243;
 }
 
+.footerMentions {
+    font-size: 1em;
+    margin: 2em auto 0 auto;
+}
+
 .bi {
     color: #142243;
 }
