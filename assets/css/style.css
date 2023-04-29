@@ -84,6 +84,13 @@ footer {
     margin: 2em auto 0 auto;
 }
 
+.footerCopyright {
+    font-size: 1em;
+    text-align: center;
+    margin: 1em auto 0.5em auto;
+    color: #142243;
+}
+
 .bi {
     color: #142243;
 }
